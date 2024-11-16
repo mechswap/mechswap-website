@@ -1,0 +1,100 @@
+/* styles.css */
+
+.alphabet-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.alphabet-bar button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.alphabet-bar button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; 
+    padding: 16px; 
+}
+
+.category-card {
+    background-color: #ffffff; 
+    border: 1px solid #ddd;
+    border-radius: 12px; 
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    flex: 0 1 calc(50% - 16px); 
+    box-sizing: border-box;
+    text-align: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    text-decoration: none;
+    color: inherit; 
+}
+
+.category-card h2 {
+    margin: 0 0 16px 0; 
+    font-size: 1.5em; 
+    color: #333; 
+}
+
+.category-card ul {
+    list-style: none;
+    padding: 0; 
+    margin: 0; 
+}
+
+.category-card li {
+    margin: 12px 0;
+    font-size: 1.2em;
+    color: #555; 
+    padding: 8px 0;
+    border-bottom: 1px solid #eee; 
+}
+
+.category-card li:last-child {
+    border-bottom: none; 
+}
+
+.sub-category-link {
+    text-decoration: none; 
+    color: #007bff; 
+    transition: color 0.3s ease; 
+}
+
+.sub-category-link:hover {
+    color: #0056b3;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-card::before {
+    content: ''; 
+    display: block;
+    width: 50px; 
+    height: 5px; 
+    background-color: #007bff;
+    margin: 0 auto 16px; 
+    border-radius: 2px;
+}

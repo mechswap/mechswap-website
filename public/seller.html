@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-mQ93aTfg3KTRr+5g9S8R77KbsJT7fHA5bcr/MXlzTGR9iZ/eI1Nx5g5J+ZXdzl0y" crossorigin="anonymous">
+    <!-- tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="style/seller.css">
+    <link rel="stylesheet" href="style/header_footer.css">
+
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Angular JS -->
+    <script src="script/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body class="bg-gray-100" ng-app="myModule" ng-controller="myController">
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div>
+                    <span>Follow Us:</span>
+                    <span class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </span>
+                </div>
+                <div class="auth-links">
+                    <!--LogIn Button trigger modal -->
+                    <a href="index.html"><button type="button">
+                            Log Out <i class="fas fa-user-minus"></i>
+                        </button></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="logo-bar">
+            <div class="container d-flex justify-content-between align-items-center">
+                <img src="asset/logo1.png" style="height: 80px; width: auto; margin-left: 50px;" alt=".com logo">
+                <div class="btn-group">
+                    <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#searchMachine">Search Machine
+                        &#128269;</a>
+
+                    <!--Search Machine Modal -->
+                    <div class="modal fade" id="searchMachine" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="exampleModalLabel">Search Machine</h4>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    <form method="post">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-4">
+                                            <div>
+                                                <label>Category <span class="imp">*</span></label>
+                                                <select class="w-full border border-gray-300 p-2 rounded"
+                                                    style="background-color: #2d3748;" id="category1" required="">
+                                                    <option value=""> -- Select Category -- </option>
+                                                    <option value="96">Air Compressors</option>
+                                                    <option value="207">Air Dryers</option>
+                                                    <option value="784">Air tank</option>
+                                                    <option value="259">Assembly Machines</option>
+                                                    <option value="691">Astronomical telescope</option>
+                                                    <option value="1091">Balancing Machine</option>
+                                                    <option value="2">Band Saw Machines</option>
+                                                    <option value="1012">Bar Feeder Machine </option>
+                                                    <option value="544">Belt Thunder</option>
+                                                    <option value="563">Bench Race</option>
+                                                    <option value="164">Bending Machines</option>
+                                                    <option value="717">Bettiseed</option>
+                                                    <option value="726">Beveling machine</option>
+                                                    <option value="782">Blower</option>
+                                                    <option value="3">Bolt Maker / Bolt Formers</option>
+                                                    <option value="1285">Bolt making machine</option>
+                                                    <option value="1028">Bolt Plant </option>
+                                                    <option value="100">Borer Machine</option>
+                                                    <option value="823">Boring Machines</option>
+                                                    <option value="576">Bow disc</option>
+                                                    <option value="871">Box Making Machines</option>
+                                                    <option value="1241">Bricks Machine</option>
+                                                    <option value="384">Broching Machines</option>
+                                                    <option value="705">BT30 tool</option>
+                                                    <option value="703">BT50 tool</option>
+                                                    <option value="641">Cable band and others</option>
+                                                    <option value="1007">Cable Wiring Machine </option>
+                                                    <option value="669">caster</option>
+                                                    <option value="1005">Caterpillar Machine </option>
+                                                    <option value="656">Center of rotation</option>
+                                                    <option value="1086">Chain Link Machine</option>
+                                                    <option value="810">Chair with casters</option>
+                                                    <option value="328">Chamfering Machines</option>
+                                                    <option value="231">Chemical Processing Equipment</option>
+                                                    <option value="780">Chiller</option>
+                                                    <option value="232">Chip, Recycling & Scrap Equipments</option>
+                                                    <option value="721">Circular table</option>
+                                                    <option value="667">Clamping Machines</option>
+                                                    <option value="233">Cleaning, Painting & Washing Equipments</option>
+                                                    <option value="911">CMM Machines</option>
+                                                    <option value="109">CNC Machine</option>
+                                                    <option value="1172">Coal Feeder Machine</option>
+                                                    <option value="16">Cold Headers</option>
+                                                    <option value="930">Color Printing Machines</option>
+                                                    <option value="755">Compressor Machine </option>
+                                                    <option value="293">Continuous Casting Machines</option>
+                                                    <option value="582">Contour machine</option>
+                                                    <option value="1059">Conveyor</option>
+                                                    <option value="519">Cubicle</option>
+                                                    <option value="969">Cutter Machine </option>
+                                                    <option value="966">Cutting Machine </option>
+                                                    <option value="778">Cutting pump </option>
+                                                    <option value="605">Cylinder gauge</option>
+                                                    <option value="987">D Coil Machine </option>
+                                                    <option value="934">Deep Hole Boring Machines</option>
+                                                    <option value="643">Demagnetizer</option>
+                                                    <option value="645">Dial gauge</option>
+                                                    <option value="1191">Die Head Machine</option>
+                                                    <option value="707">Double-breaking cabinet</option>
+                                                    <option value="507">Draw Bench Machines</option>
+                                                    <option value="751">Drawing wagon</option>
+                                                    <option value="628">Drill chuck and others</option>
+                                                    <option value="115">Drill Machine</option>
+                                                    <option value="909">Drill Point Grinding Machines</option>
+                                                    <option value="1097">Drum Polishing Machine</option>
+                                                    <option value="762">Dry library</option>
+                                                    <option value="267">Dust Collectors</option>
+                                                    <option value="747">Eccentricity checker</option>
+                                                    <option value="229">Electic Discharge Machine (EDM)</option>
+                                                    <option value="637">Electric chain block</option>
+                                                    <option value="357">Electric Motors</option>
+                                                    <option value="549">Electric pencil</option>
+                                                    <option value="796">Electric power lifter</option>
+                                                    <option value="601">electrical tools</option>
+                                                    <option value="697">Evacuated ladder</option>
+                                                    <option value="738">Exclusive jig</option>
+                                                    <option value="1103">Extrusion Machine</option>
+                                                    <option value="512">Extrusion Machines (Plastic)</option>
+                                                    <option value="261">Eyeletting Machines</option>
+                                                    <option value="1282">Fabrication for construction</option>
+                                                    <option value="441">FACING & CENTERING MACHINERY</option>
+                                                    <option value="892">Fan Gaurd Machines</option>
+                                                    <option value="673">Fasteners and others</option>
+                                                    <option value="1231">Fasteners Inspection Machine </option>
+                                                    <option value="291">Feeder Systems</option>
+                                                    <option value="790">Fine cut</option>
+                                                    <option value="626">Fine tool</option>
+                                                    <option value="279">Finishing Machines</option>
+                                                    <option value="478">Flame Cutting Machines</option>
+                                                    <option value="802">Floor polisher</option>
+                                                    <option value="1184">Flour Plant</option>
+                                                    <option value="1257">Food Machinery </option>
+                                                    <option value="973">Forklift Machine </option>
+                                                    <option value="299">Foundry Molding Machines</option>
+                                                    <option value="848">Four-claw chuck</option>
+                                                    <option value="269">Fume Extractors</option>
+                                                    <option value="310">Furnaces & heat treatment system</option>
+                                                    <option value="764">Fuselage for fusing</option>
+                                                    <option value="500">Gas Seperators</option>
+                                                    <option value="821">Gate type flat cutting disc</option>
+                                                    <option value="361">Gear Box</option>
+                                                    <option value="129">Gear Machinery</option>
+                                                    <option value="894">Gear Shaper Machines</option>
+                                                    <option value="491">Generator (Industrial)</option>
+                                                    <option value="145">Grinding Machine</option>
+                                                    <option value="385">Grooving Machines</option>
+                                                    <option value="196">Hack Saw Machines</option>
+                                                    <option value="297">Hammer Press Machines</option>
+                                                    <option value="806">Hand Palette</option>
+                                                    <option value="886">HBM MACHINES</option>
+                                                    <option value="493">Heat Exchangers</option>
+                                                    <option value="1078">Heater Machine</option>
+                                                    <option value="596">Height gauge</option>
+                                                    <option value="952">Hexa Machines</option>
+                                                    <option value="271">High Pressure Coolant Systems</option>
+                                                    <option value="613">Hob blade</option>
+                                                    <option value="825">Hobbing Machines</option>
+                                                    <option value="840">Holder</option>
+                                                    <option value="528">Hole Processing Machines</option>
+                                                    <option value="611">Hole saw</option>
+                                                    <option value="828">Honing Machines</option>
+                                                    <option value="186">Horizontal Machining Centres (HMC)</option>
+                                                    <option value="1176">Hot Forging Plant</option>
+                                                    <option value="899">Hot Processor Machines</option>
+                                                    <option value="864">hydraulic unit</option>
+                                                    <option value="30">Industrial Heaters</option>
+                                                    <option value="1259">Ingots / Billet making machine</option>
+                                                    <option value="255">Injection Moulding Machines (Plastic)</option>
+                                                    <option value="594">jack</option>
+                                                    <option value="880">JCB Machines</option>
+                                                    <option value="736">Jet stove</option>
+                                                    <option value="679">Kerey</option>
+                                                    <option value="775">Kerosene tank machines</option>
+                                                    <option value="534">Key seater</option>
+                                                    <option value="416">Laser Machines</option>
+                                                    <option value="165">Lathe Machines</option>
+                                                    <option value="800">Level cart</option>
+                                                    <option value="622">Leveler</option>
+                                                    <option value="786">Lift table</option>
+                                                    <option value="798">Lifttler</option>
+                                                    <option value="816">Lighting fixture</option>
+                                                    <option value="814">Locker for 6 people</option>
+                                                    <option value="713">Loco disc</option>
+                                                    <option value="1304">Long Full Thread Stud Plant </option>
+                                                    <option value="857">Long tap</option>
+                                                    <option value="553">Lubricating oil supply device</option>
+                                                    <option value="1158">M12 Stud Plant</option>
+                                                    <option value="1159">M16 Stud Plant</option>
+                                                    <option value="831">Magnetic machine</option>
+                                                    <option value="592">Magnifier and others</option>
+                                                    <option value="711">Manual hydraulic pipe bender</option>
+                                                    <option value="607">Manual pipe bender</option>
+                                                    <option value="730">Manual winch</option>
+                                                    <option value="517">MARBAL CUTTING MACHINE</option>
+                                                    <option value="1208">Mask making machine </option>
+                                                    <option value="740">Mass block etc</option>
+                                                    <option value="724">MC power vice</option>
+                                                    <option value="685">Measuring instrument</option>
+                                                    <option value="620">Measuring tool</option>
+                                                    <option value="1167">Medium Power Coating</option>
+                                                    <option value="566">Metal saw</option>
+                                                    <option value="846">micro</option>
+                                                    <option value="618">Micro calipers etc.</option>
+                                                    <option value="687">Micro Cut Bowling</option>
+                                                    <option value="1042">Milling and borer machine </option>
+                                                    <option value="647">Milling chuck and others</option>
+                                                    <option value="166">Milling machine</option>
+                                                    <option value="273">Mist Collectors</option>
+                                                    <option value="794">Mobile crane</option>
+                                                    <option value="771">Mobile Filtration Device machines</option>
+                                                    <option value="515">Monofilament Brush Making machine (Plastic)
+                                                    </option>
+                                                    <option value="788">motor</option>
+                                                    <option value="250">Moulding Machines (Foundry)</option>
+                                                    <option value="22">Nail Making Machines</option>
+                                                    <option value="521">NC rotary</option>
+                                                    <option value="1083">New Pipe Manufacturer </option>
+                                                    <option value="598">Non-stop chuck</option>
+                                                    <option value="701">Nozzle Tester</option>
+                                                    <option value="1148">Nut Assemble Machine</option>
+                                                    <option value="23">Nut Formers / Nut Makers</option>
+                                                    <option value="1181">Nut Header Machine</option>
+                                                    <option value="1288">Nut making machine</option>
+                                                    <option value="1318">Nut Plant </option>
+                                                    <option value="24">Nut Tapping machines</option>
+                                                    <option value="227">Offset Printing Machine</option>
+                                                    <option value="1206">Oil extraction machine </option>
+                                                    <option value="264">Oil Filtering Systems</option>
+                                                    <option value="496">Oil Seperators</option>
+                                                    <option value="1209">Other</option>
+                                                    <option value="639">packaging machine</option>
+                                                    <option value="1113">Pallet Machine</option>
+                                                    <option value="950">PAPER DISH MAKING MACHINES</option>
+                                                    <option value="1235">Part former</option>
+                                                    <option value="635">Part-Time Job</option>
+                                                    <option value="1204">Pasteurizer Plant</option>
+                                                    <option value="1069">Piller machine </option>
+                                                    <option value="561">Pipe Thread Cutting Machines</option>
+                                                    <option value="182">Planner Machines</option>
+                                                    <option value="188">Plano Miller</option>
+                                                    <option value="475">Plasma Machines</option>
+                                                    <option value="933">Plastic Molding Machines</option>
+                                                    <option value="742">Platen</option>
+                                                    <option value="283">Plating Equipment</option>
+                                                    <option value="1128">Plating Machine</option>
+                                                    <option value="890">Pointing Machines</option>
+                                                    <option value="1123">Pop Rivet Plant </option>
+                                                    <option value="683">Portable ultrasonic flow meter</option>
+                                                    <option value="753">Positioner</option>
+                                                    <option value="1168">Power Coating</option>
+                                                    <option value="173">Power Press Machines</option>
+                                                    <option value="792">Precision cutting machine</option>
+                                                    <option value="540">Press</option>
+                                                    <option value="380">Press Brake machines</option>
+                                                    <option value="884">Press Machine </option>
+                                                    <option value="163">Pressure die casting Machine</option>
+                                                    <option value="624">Pressure gauge</option>
+                                                    <option value="939">Printing Machines</option>
+                                                    <option value="29">Punching Machines</option>
+                                                    <option value="925">PVC Machine </option>
+                                                    <option value="1014">Reeling Machine </option>
+                                                    <option value="663">Regulator</option>
+                                                    <option value="1246">Robot Machinery</option>
+                                                    <option value="709">Rockwell hardness tester</option>
+                                                    <option value="905">Roll Forming Machines</option>
+                                                    <option value="609">Rolling die dies</option>
+                                                    <option value="990">Rolling Machine</option>
+                                                    <option value="922">Rolling Mill Plant</option>
+                                                    <option value="1094">Router Machine</option>
+                                                    <option value="998">Rubber Molding Machine </option>
+                                                    <option value="584">Saper</option>
+                                                    <option value="689">Saver saw</option>
+                                                    <option value="920">Scan Machines</option>
+                                                    <option value="536">Scrap Cutter</option>
+                                                    <option value="1289">Screw making machine</option>
+                                                    <option value="1038">Screw Plant</option>
+                                                    <option value="122">Screw Press Machines</option>
+                                                    <option value="192">Screw/Bolt/Stud Shavers (Chamfering) Machines
+                                                    </option>
+                                                    <option value="90">Self Drilling Screw Forming Machine</option>
+                                                    <option value="1223">Semi Tubular / Hollow / Pop / Blind Rivet
+                                                        Headers</option>
+                                                    <option value="665">Shakugana</option>
+                                                    <option value="203">Shaper Machine</option>
+                                                    <option value="184">Shearing Machine</option>
+                                                    <option value="812">Shoebox</option>
+                                                    <option value="675">Side cutter</option>
+                                                    <option value="681">Side cutter arbor</option>
+                                                    <option value="649">Slanted chuck</option>
+                                                    <option value="853">sleeve</option>
+                                                    <option value="559">Sliding circular saw</option>
+                                                    <option value="560">Sliding circular saw Machines</option>
+                                                    <option value="719">Slope index</option>
+                                                    <option value="19">Slotting Machine (Fasteners)</option>
+                                                    <option value="421">Slotting Machines</option>
+                                                    <option value="551">Small index </option>
+                                                    <option value="651">Small scroll chuck</option>
+                                                    <option value="1251">Solar plant Machine</option>
+                                                    <option value="907">SPM Machine</option>
+                                                    <option value="917">SPRING CUTTING MACHINES</option>
+                                                    <option value="1198">Spring Washer Making Machine</option>
+                                                    <option value="978">Stabilizer</option>
+                                                    <option value="671">Stamp</option>
+                                                    <option value="1290">Stud making machine</option>
+                                                    <option value="1155">Stud Plant</option>
+                                                    <option value="568">Super finishing canna board</option>
+                                                    <option value="1249">Super Finishing machine</option>
+                                                    <option value="287">Super finishing Machines</option>
+                                                    <option value="1187">Sutli Plant</option>
+                                                    <option value="958">Swing Machine </option>
+                                                    <option value="658">T Slot Cutter</option>
+                                                    <option value="249">Tablet Press Machines</option>
+                                                    <option value="1314">Tank</option>
+                                                    <option value="773">Tank with Magepepa machines</option>
+                                                    <option value="632">Tap ? Dice ? Reamer</option>
+                                                    <option value="883">Tap Grinding Machines</option>
+                                                    <option value="838">Tapper</option>
+                                                    <option value="677">Tapping chuck</option>
+                                                    <option value="557">Tapping Machine</option>
+                                                    <option value="1331">test main cat</option>
+                                                    <option value="896">Testing Machines</option>
+                                                    <option value="1001">Textile Machine </option>
+                                                    <option value="943">Thermic Boiler Machines</option>
+                                                    <option value="18">Threading Machine</option>
+                                                    <option value="542">Three roll</option>
+                                                    <option value="615">Three-point micro</option>
+                                                    <option value="630">Throwaway byte</option>
+                                                    <option value="603">Thunder</option>
+                                                    <option value="699">Tool cabinet</option>
+                                                    <option value="859">Tool presetter</option>
+                                                    <option value="861">Tool Wagon</option>
+                                                    <option value="833">Tooling</option>
+                                                    <option value="976">Transformer Machine </option>
+                                                    <option value="1065">Traub machine</option>
+                                                    <option value="94">Trimming Machines</option>
+                                                    <option value="745">trout</option>
+                                                    <option value="971">Turning Machine </option>
+                                                    <option value="1003">Turret punch Machine </option>
+                                                    <option value="874">Type Writing Machines</option>
+                                                    <option value="1074">U Bolt machine</option>
+                                                    <option value="1017">U Center MACHINE </option>
+                                                    <option value="901">Ultrasonic Testing Machines</option>
+                                                    <option value="556">Upright drilling machine</option>
+                                                    <option value="1105">Upsetter (Metal Gathering Machine)</option>
+                                                    <option value="275">Vacuum Chambers</option>
+                                                    <option value="580">Vader machine</option>
+                                                    <option value="936">Vibrator Machines</option>
+                                                    <option value="728">Vice versa</option>
+                                                    <option value="113">VMC ( Vertical Machining Centres )</option>
+                                                    <option value="1217">WASHER ASSEMBLY MACHINE</option>
+                                                    <option value="419">Water Jet Machines</option>
+                                                    <option value="808">Weight shed</option>
+                                                    <option value="391">Welding Machines</option>
+                                                    <option value="1272">Wet Wipes Machine</option>
+                                                    <option value="547">Wheel balancer</option>
+                                                    <option value="732">Wheel cutting machine</option>
+                                                    <option value="928">Wheel for Machines</option>
+                                                    <option value="693">Whetstone balance measuring machine</option>
+                                                    <option value="867">White Coal Machines</option>
+                                                    <option value="876">Wire Cutt Machines</option>
+                                                    <option value="26">Wire Machinery</option>
+                                                    <option value="1270">Wood Working machine</option>
+                                                    <option value="749">Workbench</option>
+                                                    <option value="869">Xerox Machines</option>
+                                                    <option value="1278">Zinc plating plant</option>
+
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label>Sub Category <span class="imp">*</span></label>
+                                                <select id="subcategory1"
+                                                    class="w-full border border-gray-300 p-2 rounded"
+                                                    style="background-color: #2d3748;" required="">
+                                                    <option>-- Select Sub Category --</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <a href="variety.html"><button type="button" class="btn btn-primary w-100"
+                                            id="searchMachine1">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="btn btn-info" data-bs-toggle="modal" data-bs-target="#loginModal">Sell Your Machine</a>
+                </div>
+            </div>
+        </div>
+        <nav class="bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg">
+            <ul class="flex justify-center space-x-8 py-3 text-white text-sm font-semibold tracking-wide">
+                <li style="background: #003366; border-radius: 20px; width: 10rem; text-align: center">
+                    <a href="index.html"
+                        class="hover:text-yellow-400 hover:underline hover:scale-105 transform transition-all duration-300 ease-in-out ">HOME</a>
+                </li>
+                <li style="background: #003366; border-radius: 20px; width: 10rem; text-align: center">
+                    <a href="index.html#about"
+                        class="hover:text-yellow-400 hover:underline hover:scale-105 transform transition-all duration-300 ease-in-out">About
+                        Us</a>
+                </li>
+                <li style="background: #003366; border-radius: 20px; width: 10rem; text-align: center">
+                    <a href="buyer.html"
+                        class="hover:text-yellow-400 hover:underline hover:scale-105 transform transition-all duration-300 ease-in-out">Products</a>
+                </li>
+                <li style="background: #003366; border-radius: 20px; width: 14rem; text-align: center">
+                    <a href="#footer"
+                        class="hover:text-yellow-400 hover:underline hover:scale-105 transform transition-all duration-300 ease-in-out">Contact
+                        Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Main Content -->
+    <div class="container main-content" style="width: 80%;">
+        <h1 class="page_type" style="font-size:2rem">My Account</h1>
+        <div class="success-message" id="success-message">
+            You have successfully Logged In.
+        </div>
+        <div class="main-layout">
+            <!-- Left Side -->
+            <div class="left-side">
+                <!-- User Info -->
+                <div class="card user-info">
+                    <div class="user-details">
+                        <img src="asset/user.png" alt="User avatar">
+                        <div>
+                            <p class="username">X</p>
+                            <p class="company-name">Xyz</p>
+                            <p class="location">
+                                <span class="country">Nassau</span>,
+                                <span class="state">New Providence</span>,
+                                <span class="city">Bahamas</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="membership">
+                        <p class="member-status">MEMBER</p>
+                        <p>Since From: <span class="membership-date">Sep 15, 2024</span> </p>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Manage Your Account -->
+                <div class="card manage-account">
+                    <h2 class="member-status" style="text-align: center;">MANAGE YOUR ACCOUNT</h2>
+                    <ul>
+                        <li><a href="#" id="my-account">My Account</a></li>
+                        <li><a href="#" id="manage-products">Manage New/Used Products</a></li>
+                        <li><a href="#" id="add-product">Add New/Used Product</a></li>
+                        <li><a href="#" id="my-profile">My Profile</a></li>
+                        <li><a href="#" id="change-password">Change Password</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="right-side">
+                <!-- Product Status -->
+                <div class="card product-status">
+                    <div class="status-details">
+                        <h2>Product Status</h2>
+                        <ul>
+                            <li><span id="postedCount">0</span> Product(s) has been posted</li>
+                            <li><span id="approvedCount">0</span> Product(s) Approved</li>
+                            <li><span id="editingCount">0</span> Product(s) Require Editing</li>
+                            <li><span id="rejectedCount">0</span> Product(s) Rejected</li>
+                        </ul>
+                        <div class="button-container add_product">
+                            <button class="mt-4 bg-gray-700 text-white px-4 py-2 rounded">
+                                Add New/Used Product
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ADD Product-->
+                <div class="addproduct card">
+                    <div class="max-w-6xl mx-auto bg-white p-6 rounded ">
+                        <div class="border-b-2 border-gray-300 pb-4 mb-4">
+                            <h2 class="text-xl font-bold text-blue-600">Basic Information</h2>
+                        </div>
+                        <form method="post">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-4">
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Product ID <span
+                                            class="imp">*</span></label>
+                                    <input type="text" id="productId"
+                                        class="w-full bg-gray-300 border border-gray-300 p-2 rounded " disabled>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Type <span
+                                            class="imp">*</span></label>
+                                    <select class="w-full border border-gray-300 p-2 rounded" id="usage_Type">
+                                        <option value="used">Used</option>
+                                        <option value="new">New</option>
+                                    </select>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Product Name <span
+                                            class="imp">*</span></label>
+                                    <input type="text" id="product_Name"
+                                        class="w-full border border-gray-300 p-2 rounded" required>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Model no.<span
+                                            class="imp">*</span></label>
+                                    <input type="text" id="model_No" class="w-full border border-gray-300 p-2 rounded"
+                                        required>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Country of Mfg<span
+                                            class="imp">*</span></label>
+                                    <input type="text" id="country_Mfg"
+                                        class="w-full border border-gray-300 p-2 rounded" required>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Capacity of Machine<span
+                                            class="imp">*</span></label>
+                                    <input type="text" id="capacity" class="w-full border border-gray-300 p-2 rounded"
+                                        required>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Warranty (if any)<span
+                                            class="imp">*</span></label>
+                                    <input type="text" id="warranty" class="w-full border border-gray-300 p-2 rounded"
+                                        value="0" required>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Years Of Usage<span
+                                            class="imp">*</span></label>
+                                    <input type="text" id="usage_Years"
+                                        class="w-full border border-gray-300 p-2 rounded" required>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-2">
+                                    <label class="block text-gray-700 font-bold mb-2">Product Specification <span
+                                            class="imp">*</span></label>
+                                    <textarea id="specification" class="w-full border border-gray-300 p-2 rounded"
+                                        required></textarea>
+                                    <p class="text-blue-500 text-sm mt-1">Ex.: Machine is in Running Condition; Machine
+                                        is under Power, Machine with DRO, Machine with Tooling or Attachment</p>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Rate <span
+                                            class="imp">*</span></label>
+                                    <div class="flex">
+                                        <select id="currency" class="w-1/3 border border-gray-300 p-2 rounded" required>
+                                            <option>-- Select --</option>
+                                            <option value="INR">र (INR)</option>
+                                            <option value="USD">$ (USD)</option>
+                                        </select>
+                                        <input id="price" type="text"
+                                            class="w-2/3 border border-gray-300 p-2 rounded ml-2"
+                                            placeholder="Enter Price" required>
+                                    </div>
+                                    <p class="text-blue-500 text-sm mt-1">Format: 105000.00</p>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Quantity <span
+                                            class="imp">*</span></label>
+                                    <input id="quantity" type="text" class="w-full border border-gray-300 p-2 rounded"
+                                        required>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-2">
+                                    <label class="block text-gray-700 font-bold mb-2">Main Image <span
+                                            class="imp">*</span></label>
+                                    <input id="main_Image" type="file" class="w-full border border-gray-300 p-2 rounded"
+                                        required>
+                                    <p class="text-gray-500 text-sm mt-1">Format: JPG/GIF Size: 2MB Max.</p>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Image 1</label>
+                                    <input type="file" id="image1" class="w-full border border-gray-300 p-2 rounded"
+                                        required>
+                                    <p class="text-gray-500 text-sm mt-1">Format: JPG/GIF Size: 2MB Max.</p>
+                                </div>
+                                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                    <label class="block text-gray-700 font-bold mb-2">Image 2</label>
+                                    <input type="file" id="image2" class="w-full border border-gray-300 p-2 rounded"
+                                        required>
+                                    <p class="text-gray-500 text-sm mt-1">Format: JPG/GIF Size: 2MB Max.</p>
+                                </div>
+                            </div>
+                            <div class="border-b-2 border-gray-300 pb-4 mb-4">
+                                <h2 class="text-xl font-bold text-blue-600">Detailed Information</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">Category <span
+                                            class="imp">*</span></label>
+                                    <select class="w-full border border-gray-300 p-2 rounded" id="category" required="">
+                                        <option value=""> -- Select Category -- </option>
+                                        <option value="96">Air Compressors</option>
+                                        <option value="207">Air Dryers</option>
+                                        <option value="784">Air tank</option>
+                                        <option value="259">Assembly Machines</option>
+                                        <option value="691">Astronomical telescope</option>
+                                        <option value="1091">Balancing Machine</option>
+                                        <option value="2">Band Saw Machines</option>
+                                        <option value="1012">Bar Feeder Machine </option>
+                                        <option value="544">Belt Thunder</option>
+                                        <option value="563">Bench Race</option>
+                                        <option value="164">Bending Machines</option>
+                                        <option value="717">Bettiseed</option>
+                                        <option value="726">Beveling machine</option>
+                                        <option value="782">Blower</option>
+                                        <option value="3">Bolt Maker / Bolt Formers</option>
+                                        <option value="1285">Bolt making machine</option>
+                                        <option value="1028">Bolt Plant </option>
+                                        <option value="100">Borer Machine</option>
+                                        <option value="823">Boring Machines</option>
+                                        <option value="576">Bow disc</option>
+                                        <option value="871">Box Making Machines</option>
+                                        <option value="1241">Bricks Machine</option>
+                                        <option value="384">Broching Machines</option>
+                                        <option value="705">BT30 tool</option>
+                                        <option value="703">BT50 tool</option>
+                                        <option value="641">Cable band and others</option>
+                                        <option value="1007">Cable Wiring Machine </option>
+                                        <option value="669">caster</option>
+                                        <option value="1005">Caterpillar Machine </option>
+                                        <option value="656">Center of rotation</option>
+                                        <option value="1086">Chain Link Machine</option>
+                                        <option value="810">Chair with casters</option>
+                                        <option value="328">Chamfering Machines</option>
+                                        <option value="231">Chemical Processing Equipment</option>
+                                        <option value="780">Chiller</option>
+                                        <option value="232">Chip, Recycling & Scrap Equipments</option>
+                                        <option value="721">Circular table</option>
+                                        <option value="667">Clamping Machines</option>
+                                        <option value="233">Cleaning, Painting & Washing Equipments</option>
+                                        <option value="911">CMM Machines</option>
+                                        <option value="109">CNC Machine</option>
+                                        <option value="1172">Coal Feeder Machine</option>
+                                        <option value="16">Cold Headers</option>
+                                        <option value="930">Color Printing Machines</option>
+                                        <option value="755">Compressor Machine </option>
+                                        <option value="293">Continuous Casting Machines</option>
+                                        <option value="582">Contour machine</option>
+                                        <option value="1059">Conveyor</option>
+                                        <option value="519">Cubicle</option>
+                                        <option value="969">Cutter Machine </option>
+                                        <option value="966">Cutting Machine </option>
+                                        <option value="778">Cutting pump </option>
+                                        <option value="605">Cylinder gauge</option>
+                                        <option value="987">D Coil Machine </option>
+                                        <option value="934">Deep Hole Boring Machines</option>
+                                        <option value="643">Demagnetizer</option>
+                                        <option value="645">Dial gauge</option>
+                                        <option value="1191">Die Head Machine</option>
+                                        <option value="707">Double-breaking cabinet</option>
+                                        <option value="507">Draw Bench Machines</option>
+                                        <option value="751">Drawing wagon</option>
+                                        <option value="628">Drill chuck and others</option>
+                                        <option value="115">Drill Machine</option>
+                                        <option value="909">Drill Point Grinding Machines</option>
+                                        <option value="1097">Drum Polishing Machine</option>
+                                        <option value="762">Dry library</option>
+                                        <option value="267">Dust Collectors</option>
+                                        <option value="747">Eccentricity checker</option>
+                                        <option value="229">Electic Discharge Machine (EDM)</option>
+                                        <option value="637">Electric chain block</option>
+                                        <option value="357">Electric Motors</option>
+                                        <option value="549">Electric pencil</option>
+                                        <option value="796">Electric power lifter</option>
+                                        <option value="601">electrical tools</option>
+                                        <option value="697">Evacuated ladder</option>
+                                        <option value="738">Exclusive jig</option>
+                                        <option value="1103">Extrusion Machine</option>
+                                        <option value="512">Extrusion Machines (Plastic)</option>
+                                        <option value="261">Eyeletting Machines</option>
+                                        <option value="1282">Fabrication for construction</option>
+                                        <option value="441">FACING & CENTERING MACHINERY</option>
+                                        <option value="892">Fan Gaurd Machines</option>
+                                        <option value="673">Fasteners and others</option>
+                                        <option value="1231">Fasteners Inspection Machine </option>
+                                        <option value="291">Feeder Systems</option>
+                                        <option value="790">Fine cut</option>
+                                        <option value="626">Fine tool</option>
+                                        <option value="279">Finishing Machines</option>
+                                        <option value="478">Flame Cutting Machines</option>
+                                        <option value="802">Floor polisher</option>
+                                        <option value="1184">Flour Plant</option>
+                                        <option value="1257">Food Machinery </option>
+                                        <option value="973">Forklift Machine </option>
+                                        <option value="299">Foundry Molding Machines</option>
+                                        <option value="848">Four-claw chuck</option>
+                                        <option value="269">Fume Extractors</option>
+                                        <option value="310">Furnaces & heat treatment system</option>
+                                        <option value="764">Fuselage for fusing</option>
+                                        <option value="500">Gas Seperators</option>
+                                        <option value="821">Gate type flat cutting disc</option>
+                                        <option value="361">Gear Box</option>
+                                        <option value="129">Gear Machinery</option>
+                                        <option value="894">Gear Shaper Machines</option>
+                                        <option value="491">Generator (Industrial)</option>
+                                        <option value="145">Grinding Machine</option>
+                                        <option value="385">Grooving Machines</option>
+                                        <option value="196">Hack Saw Machines</option>
+                                        <option value="297">Hammer Press Machines</option>
+                                        <option value="806">Hand Palette</option>
+                                        <option value="886">HBM MACHINES</option>
+                                        <option value="493">Heat Exchangers</option>
+                                        <option value="1078">Heater Machine</option>
+                                        <option value="596">Height gauge</option>
+                                        <option value="952">Hexa Machines</option>
+                                        <option value="271">High Pressure Coolant Systems</option>
+                                        <option value="613">Hob blade</option>
+                                        <option value="825">Hobbing Machines</option>
+                                        <option value="840">Holder</option>
+                                        <option value="528">Hole Processing Machines</option>
+                                        <option value="611">Hole saw</option>
+                                        <option value="828">Honing Machines</option>
+                                        <option value="186">Horizontal Machining Centres (HMC)</option>
+                                        <option value="1176">Hot Forging Plant</option>
+                                        <option value="899">Hot Processor Machines</option>
+                                        <option value="864">hydraulic unit</option>
+                                        <option value="30">Industrial Heaters</option>
+                                        <option value="1259">Ingots / Billet making machine</option>
+                                        <option value="255">Injection Moulding Machines (Plastic)</option>
+                                        <option value="594">jack</option>
+                                        <option value="880">JCB Machines</option>
+                                        <option value="736">Jet stove</option>
+                                        <option value="679">Kerey</option>
+                                        <option value="775">Kerosene tank machines</option>
+                                        <option value="534">Key seater</option>
+                                        <option value="416">Laser Machines</option>
+                                        <option value="165">Lathe Machines</option>
+                                        <option value="800">Level cart</option>
+                                        <option value="622">Leveler</option>
+                                        <option value="786">Lift table</option>
+                                        <option value="798">Lifttler</option>
+                                        <option value="816">Lighting fixture</option>
+                                        <option value="814">Locker for 6 people</option>
+                                        <option value="713">Loco disc</option>
+                                        <option value="1304">Long Full Thread Stud Plant </option>
+                                        <option value="857">Long tap</option>
+                                        <option value="553">Lubricating oil supply device</option>
+                                        <option value="1158">M12 Stud Plant</option>
+                                        <option value="1159">M16 Stud Plant</option>
+                                        <option value="831">Magnetic machine</option>
+                                        <option value="592">Magnifier and others</option>
+                                        <option value="711">Manual hydraulic pipe bender</option>
+                                        <option value="607">Manual pipe bender</option>
+                                        <option value="730">Manual winch</option>
+                                        <option value="517">MARBAL CUTTING MACHINE</option>
+                                        <option value="1208">Mask making machine </option>
+                                        <option value="740">Mass block etc</option>
+                                        <option value="724">MC power vice</option>
+                                        <option value="685">Measuring instrument</option>
+                                        <option value="620">Measuring tool</option>
+                                        <option value="1167">Medium Power Coating</option>
+                                        <option value="566">Metal saw</option>
+                                        <option value="846">micro</option>
+                                        <option value="618">Micro calipers etc.</option>
+                                        <option value="687">Micro Cut Bowling</option>
+                                        <option value="1042">Milling and borer machine </option>
+                                        <option value="647">Milling chuck and others</option>
+                                        <option value="166">Milling machine</option>
+                                        <option value="273">Mist Collectors</option>
+                                        <option value="794">Mobile crane</option>
+                                        <option value="771">Mobile Filtration Device machines</option>
+                                        <option value="515">Monofilament Brush Making machine (Plastic)</option>
+                                        <option value="788">motor</option>
+                                        <option value="250">Moulding Machines (Foundry)</option>
+                                        <option value="22">Nail Making Machines</option>
+                                        <option value="521">NC rotary</option>
+                                        <option value="1083">New Pipe Manufacturer </option>
+                                        <option value="598">Non-stop chuck</option>
+                                        <option value="701">Nozzle Tester</option>
+                                        <option value="1148">Nut Assemble Machine</option>
+                                        <option value="23">Nut Formers / Nut Makers</option>
+                                        <option value="1181">Nut Header Machine</option>
+                                        <option value="1288">Nut making machine</option>
+                                        <option value="1318">Nut Plant </option>
+                                        <option value="24">Nut Tapping machines</option>
+                                        <option value="227">Offset Printing Machine</option>
+                                        <option value="1206">Oil extraction machine </option>
+                                        <option value="264">Oil Filtering Systems</option>
+                                        <option value="496">Oil Seperators</option>
+                                        <option value="1209">Other</option>
+                                        <option value="639">packaging machine</option>
+                                        <option value="1113">Pallet Machine</option>
+                                        <option value="950">PAPER DISH MAKING MACHINES</option>
+                                        <option value="1235">Part former</option>
+                                        <option value="635">Part-Time Job</option>
+                                        <option value="1204">Pasteurizer Plant</option>
+                                        <option value="1069">Piller machine </option>
+                                        <option value="561">Pipe Thread Cutting Machines</option>
+                                        <option value="182">Planner Machines</option>
+                                        <option value="188">Plano Miller</option>
+                                        <option value="475">Plasma Machines</option>
+                                        <option value="933">Plastic Molding Machines</option>
+                                        <option value="742">Platen</option>
+                                        <option value="283">Plating Equipment</option>
+                                        <option value="1128">Plating Machine</option>
+                                        <option value="890">Pointing Machines</option>
+                                        <option value="1123">Pop Rivet Plant </option>
+                                        <option value="683">Portable ultrasonic flow meter</option>
+                                        <option value="753">Positioner</option>
+                                        <option value="1168">Power Coating</option>
+                                        <option value="173">Power Press Machines</option>
+                                        <option value="792">Precision cutting machine</option>
+                                        <option value="540">Press</option>
+                                        <option value="380">Press Brake machines</option>
+                                        <option value="884">Press Machine </option>
+                                        <option value="163">Pressure die casting Machine</option>
+                                        <option value="624">Pressure gauge</option>
+                                        <option value="939">Printing Machines</option>
+                                        <option value="29">Punching Machines</option>
+                                        <option value="925">PVC Machine </option>
+                                        <option value="1014">Reeling Machine </option>
+                                        <option value="663">Regulator</option>
+                                        <option value="1246">Robot Machinery</option>
+                                        <option value="709">Rockwell hardness tester</option>
+                                        <option value="905">Roll Forming Machines</option>
+                                        <option value="609">Rolling die dies</option>
+                                        <option value="990">Rolling Machine</option>
+                                        <option value="922">Rolling Mill Plant</option>
+                                        <option value="1094">Router Machine</option>
+                                        <option value="998">Rubber Molding Machine </option>
+                                        <option value="584">Saper</option>
+                                        <option value="689">Saver saw</option>
+                                        <option value="920">Scan Machines</option>
+                                        <option value="536">Scrap Cutter</option>
+                                        <option value="1289">Screw making machine</option>
+                                        <option value="1038">Screw Plant</option>
+                                        <option value="122">Screw Press Machines</option>
+                                        <option value="192">Screw/Bolt/Stud Shavers (Chamfering) Machines</option>
+                                        <option value="90">Self Drilling Screw Forming Machine</option>
+                                        <option value="1223">Semi Tubular / Hollow / Pop / Blind Rivet Headers</option>
+                                        <option value="665">Shakugana</option>
+                                        <option value="203">Shaper Machine</option>
+                                        <option value="184">Shearing Machine</option>
+                                        <option value="812">Shoebox</option>
+                                        <option value="675">Side cutter</option>
+                                        <option value="681">Side cutter arbor</option>
+                                        <option value="649">Slanted chuck</option>
+                                        <option value="853">sleeve</option>
+                                        <option value="559">Sliding circular saw</option>
+                                        <option value="560">Sliding circular saw Machines</option>
+                                        <option value="719">Slope index</option>
+                                        <option value="19">Slotting Machine (Fasteners)</option>
+                                        <option value="421">Slotting Machines</option>
+                                        <option value="551">Small index </option>
+                                        <option value="651">Small scroll chuck</option>
+                                        <option value="1251">Solar plant Machine</option>
+                                        <option value="907">SPM Machine</option>
+                                        <option value="917">SPRING CUTTING MACHINES</option>
+                                        <option value="1198">Spring Washer Making Machine</option>
+                                        <option value="978">Stabilizer</option>
+                                        <option value="671">Stamp</option>
+                                        <option value="1290">Stud making machine</option>
+                                        <option value="1155">Stud Plant</option>
+                                        <option value="568">Super finishing canna board</option>
+                                        <option value="1249">Super Finishing machine</option>
+                                        <option value="287">Super finishing Machines</option>
+                                        <option value="1187">Sutli Plant</option>
+                                        <option value="958">Swing Machine </option>
+                                        <option value="658">T Slot Cutter</option>
+                                        <option value="249">Tablet Press Machines</option>
+                                        <option value="1314">Tank</option>
+                                        <option value="773">Tank with Magepepa machines</option>
+                                        <option value="632">Tap ? Dice ? Reamer</option>
+                                        <option value="883">Tap Grinding Machines</option>
+                                        <option value="838">Tapper</option>
+                                        <option value="677">Tapping chuck</option>
+                                        <option value="557">Tapping Machine</option>
+                                        <option value="1331">test main cat</option>
+                                        <option value="896">Testing Machines</option>
+                                        <option value="1001">Textile Machine </option>
+                                        <option value="943">Thermic Boiler Machines</option>
+                                        <option value="18">Threading Machine</option>
+                                        <option value="542">Three roll</option>
+                                        <option value="615">Three-point micro</option>
+                                        <option value="630">Throwaway byte</option>
+                                        <option value="603">Thunder</option>
+                                        <option value="699">Tool cabinet</option>
+                                        <option value="859">Tool presetter</option>
+                                        <option value="861">Tool Wagon</option>
+                                        <option value="833">Tooling</option>
+                                        <option value="976">Transformer Machine </option>
+                                        <option value="1065">Traub machine</option>
+                                        <option value="94">Trimming Machines</option>
+                                        <option value="745">trout</option>
+                                        <option value="971">Turning Machine </option>
+                                        <option value="1003">Turret punch Machine </option>
+                                        <option value="874">Type Writing Machines</option>
+                                        <option value="1074">U Bolt machine</option>
+                                        <option value="1017">U Center MACHINE </option>
+                                        <option value="901">Ultrasonic Testing Machines</option>
+                                        <option value="556">Upright drilling machine</option>
+                                        <option value="1105">Upsetter (Metal Gathering Machine)</option>
+                                        <option value="275">Vacuum Chambers</option>
+                                        <option value="580">Vader machine</option>
+                                        <option value="936">Vibrator Machines</option>
+                                        <option value="728">Vice versa</option>
+                                        <option value="113">VMC ( Vertical Machining Centres )</option>
+                                        <option value="1217">WASHER ASSEMBLY MACHINE</option>
+                                        <option value="419">Water Jet Machines</option>
+                                        <option value="808">Weight shed</option>
+                                        <option value="391">Welding Machines</option>
+                                        <option value="1272">Wet Wipes Machine</option>
+                                        <option value="547">Wheel balancer</option>
+                                        <option value="732">Wheel cutting machine</option>
+                                        <option value="928">Wheel for Machines</option>
+                                        <option value="693">Whetstone balance measuring machine</option>
+                                        <option value="867">White Coal Machines</option>
+                                        <option value="876">Wire Cutt Machines</option>
+                                        <option value="26">Wire Machinery</option>
+                                        <option value="1270">Wood Working machine</option>
+                                        <option value="749">Workbench</option>
+                                        <option value="869">Xerox Machines</option>
+                                        <option value="1278">Zinc plating plant</option>
+
+                                    </select>
+
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">Sub Category <span
+                                            class="imp">*</span></label>
+                                    <select id="subcategory" class="w-full border border-gray-300 p-2 rounded"
+                                        required="">
+                                        <option>-- Select Sub Category --</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input type="hidden" id="txtEmail1" value="user@example.com">
+                            <div class="flex justify-end">
+                                <button class="bg-blue-600 text-gray-700 px-4 py-2 rounded" style="margin-right: 1rem;"
+                                    id="submitInfo" type="button">
+                                    Submit
+                                </button>
+                                <button type="reset" class="bg-gray-200 text-gray-700 px-4 py-2 rounded">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Manage Product -->
+                <div class="card manage-tools-form">
+                    <p>
+                        Note: Remove Product After Approval.
+                    </p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full mt-4 border-collapse table-auto">
+                            <thead>
+                                <tr>
+                                    <th class="border px-4 py-2 text-left">
+                                        Product ID
+                                    </th>
+                                    <th class="border px-4 py-2 text-left">
+                                        Product Name
+                                    </th>
+                                    <th class="border px-4 py-2 text-left">
+                                        Price
+                                    </th>
+                                    <th class="border px-4 py-2 text-left">
+                                        Action
+                                    </th>
+                                </tr>
+                                <tr ng-repeat="obj in jsonArray">
+                                    <th class="border px-4 py-2 text-left">
+                                        {{obj.productID}}
+                                    </th>
+                                    <th class="border px-4 py-2 text-left">
+                                        {{obj.product_name}}
+                                    </th>
+                                    <th class="border px-4 py-2 text-left">
+                                        {{obj.price}} {{obj.currency}}
+                                    </th>
+                                    <th class="border px-4 py-2 text-left">
+                                        <button class="btn btn-danger" ng-click="doRemove(obj.productID)">Remove
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="add_product2 mt-4">
+                        <button class="bg-gray-700 text-white px-4 py-2 rounded">
+                            Add New/Used Product
+                        </button>
+                    </div>
+                </div>
+
+                <!-- My Profile -->
+                <div class="myprofile card">
+                    <div class="w-30 ml-4">
+                        <div class="bg-white p-4 rounded">
+                            <h2 class="text-blue-600 font-bold mb-4">
+                                Company Information
+                            </h2>
+                            <form method="post">
+                                <div class="mb-4">
+                                    <label class="block text-gray-700">
+                                        Email <span class="imp">*</span>
+                                    </label>
+                                    <input class="w-full p-2 border rounded"
+                                        style="background-color: rgb(191, 191, 191);" type="email" id="txtEmail2"
+                                        value="" />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700">
+                                        Company Name <span class="imp">*</span>
+                                    </label>
+                                    <input class="w-full p-2 border rounded" id="txtCompanyName" type="text" value="" />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700">
+                                        Company Detail <span class="imp">*</span>
+                                    </label>
+                                    <input class="w-full p-2 border rounded" id="txtCompanyDetail" type="text"
+                                        value="" />
+                                </div>
+                                <h2 class="text-blue-600 font-bold mb-4">
+                                    Contact Information
+                                </h2>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700">
+                                        Full Name <span class="imp">*</span>
+                                    </label>
+                                    <input class="w-full p-2 border rounded" id="txtUserName" type="text" value="" />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700">
+                                        Address <span class="imp">*</span>
+                                    </label>
+                                    <input class="w-full p-2 border rounded" id="txtUserAddress" type="text" value="" />
+                                </div>
+                                <div class="flex space-x-4 mb-4">
+                                    <div class="w-1/3">
+                                        <label class="block text-gray-700">
+                                            Country <span class="imp">*</span>
+                                        </label>
+                                        <input class="w-full p-2 border rounded" id="txtUserCountry" type="text"
+                                            value="" />
+                                    </div>
+                                    <div class="w-1/3">
+                                        <label class="block text-gray-700">
+                                            State <span class="imp">*</span>
+                                        </label>
+                                        <input class="w-full p-2 border rounded" id="txtUserState" type="text"
+                                            value="" />
+                                    </div>
+                                    <div class="w-1/3">
+                                        <label class="block text-gray-700">
+                                            City <span class="imp">*</span>
+                                        </label>
+                                        <input class="w-full p-2 border rounded" id="txtUserCity" type="text"
+                                            value="" />
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4 mb-4">
+                                    <div class="w-1/2">
+                                        <label class="block text-gray-700">
+                                            Mobile <span class="imp">*</span>
+                                        </label>
+                                        <div class="flex space-x-2">
+                                            <input class="w-1/6 p-2 border rounded" id="txtUserISD" type="text"
+                                                value="+91" placeholder="ISD" />
+                                            <input class="w-1/2 p-2 border rounded" id="txtUserMobile" type="text"
+                                                value="" placeholder="Number" />
+                                        </div>
+                                        <p class="text-blue-500 text-sm">
+                                            Format: ISD - Number
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="bg-gray-600 text-white p-2 rounded" id="updateButton" type="button">
+                                    Update
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Change Password -->
+                <div class="changePassword card">
+                    <div class="w-30">
+                        <div class="bg-white p-4 rounded">
+                            <form id="changePasswordForm">
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block mb-2" for="current-password">
+                                            Current Password *
+                                        </label>
+                                        <input class="w-full p-2 border rounded" id="current-password" type="password"
+                                            required />
+                                    </div>
+                                    <div>
+                                        <label class="block mb-2" for="new-password">
+                                            New Password *
+                                        </label>
+                                        <input class="w-full p-2 border rounded" id="new-password" type="password"
+                                            required="" />
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block mb-2" for="reenter-password">
+                                        Re-enter Password *
+                                    </label>
+                                    <input class="w-full p-2 border rounded" id="reenter-password" type="password"
+                                        required="" />
+                                </div>
+                                <button class="bg-gray-600 text-white px-4 py-2 rounded" type="button"
+                                    id="submitPasswordChange">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container mx-auto py-10 px-4">
+            <div class="flex flex-col sm:flex-row justify-around items-center py-10 space-y-6 sm:space-y-0">
+                <div class="text-center">
+                    <img alt="logo" class="mx-auto mb-2" height="100" src="asset/logo 2.png" width="150" />
+                </div>
+                <div class="text-center">
+                    <p class="text-lg font-bold text-blue-500 mb-2">Follow Us</p>
+                    <div class="flex justify-center space-x-4">
+                        <a class="text-blue-500 text-2xl" href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a class="text-blue-500 text-2xl" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-blue-500 text-2xl" href="#">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="text-lg font-bold text-blue-500 mb-2">
+                        <i class="fas fa-phone-alt"></i> Call Us
+                    </p>
+                    <p class="text-lg font-bold">+91 99158-65830</p>
+                    <p class="text-lg font-bold">+91 62393-58085</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-lg font-bold text-blue-500 mb-2">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </p>
+                    <p class="text-lg font-bold">mechswap09@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-4">
+                <p class="text-center text-sm">© 2024 MechSwap. All Rights Reserved</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 mt-2">
+                    <a class="text-sm mb-2 sm:mb-0" href="index.html#about">About Us</a>
+                    <a class="text-sm mb-2 sm:mb-0" href="#" data-bs-toggle="modal" data-bs-target="#TermsAndConditions">Terms &amp; Condition</a>
+                    <a class="text-sm mb-2 sm:mb-0" href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <!-- Terms And Conditions -->
+        <div class="modal fade" id="TermsAndConditions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 80%;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Terms and Conditions</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+               
+                        <p><strong>Welcome to MechSwap!</strong></p>
+                        <p>These Terms govern your use of the MechSwap website. By using our Website, you agree to these Terms. If you disagree, please do not use our Website.</p>
+                        <br>
+                        <p><strong>1. Use of the Website</strong></p>
+                        <p><strong>1.1 Registration:</strong> To use certain features, you must create an account. You are responsible for maintaining the confidentiality of your account and for all activities under it.</p>
+                        <p><strong>1.2 Conduct:</strong> Do not engage in any unlawful or disruptive behavior. Ensure that all content you provide is accurate and not harmful.</p>
+                        
+                        <br>
+                        <p><strong>2. Marketplace Transactions</strong></p>
+                        <p><strong>2.1 Listings:</strong> Users can list machines for sale. Ensure your listings are accurate and complete.</p>
+                        <p><strong>2.2 Purchases:</strong> Follow the agreed terms with the seller when purchasing machines.</p>
+                        <p><strong>2.3 No Fees:</strong> MechSwap does not charge any fees for transactions or services.</p>
+                        <br>
+
+                        <p><strong>3. Intellectual Property</strong></p>
+                        <p><strong>3.1 Ownership:</strong> All content on the Website is owned by MechSwap or its licensors. You may not use it without permission.</p>
+                        <br>
+
+                        <p><strong>4. Privacy</strong></p>
+                        <p>Our Privacy Policy governs how we handle your information. Review it at Privacy Policy.</p>
+                        <br>
+
+                        <p><strong>5. Limitation of Liability</strong></p>
+                        <p>MechSwap is not liable for any indirect or consequential damages arising from your use of the Website.</p>
+                        <br>
+
+                        <p><strong>6. Dispute Resolution</strong></p>
+                        <p><strong>6.1 Governing Law:</strong> These Terms are governed by the laws of India.</p>
+                        <p><strong>6.2 Disputes:</strong>Any disputes will be resolved through binding arbitration in India.</p>
+                        <br>
+
+                        <p><strong>7. Changes</strong></p>
+                        <p>We may update these Terms. Check our Website for the latest version. Continued use means you accept the changes.</p>
+                        <br>
+
+                        <p><strong>8. Contact Us</strong></p>
+                        <p>For questions, contact us at:</p>
+                        <p>Email: mechswap09@gmail.com</p>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div class="modal fade" id="privacyPolicy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 80%;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Privacy Policy</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+        
+                        <p><strong>Welcome to MechSwap!</strong></p>
+                        <p>Our Privacy Policy explains how we handle your information and what we do with it. By using our Website, you agree to the terms outlined in this policy.</p>
+                        <br>
+        
+                        <p><strong>1. What Information We Collect and Why</strong></p>
+                        <p>We collect information related to machines that sellers wish to list, whether new or used. Our goal is to connect buyers with sellers to facilitate transactions at the best possible prices. We do not share, sell, or rent any of the information collected to third parties and have no intention of doing so in the future.</p>
+                        <br>
+        
+                        <p><strong>2. Information Collected</strong></p>
+                        <p>When users become members of MechSwap, we may collect:</p>
+                        <ul>
+                            <li>• Details about the machines they wish to sell</li>
+                            <li>• Contact information (mechswap09@gmail.com, +91 99158-65830) for communication purposes</li>
+                        </ul>
+                        <p>This information may be used to contact buyers or sellers in the future to provide updates on sales, purchases, or relevant solutions and services.</p>
+                        <br>
+        
+                        <p><strong>3. Information Collected by Others</strong></p>
+                        <p>This policy pertains only to the MechSwap website and does not cover external sites accessed through links on our site. We do not use cookies. Members wishing to cancel their machine listing or update their details after a sale can contact us via email or phone.</p>
+                        <br>
+        
+                        <p><strong>4. Periodic Policy Changes</strong></p>
+                        <p>MechSwap reviews its privacy practices periodically. To stay updated with the most current version of our privacy policy, please bookmark and regularly review this page.</p>
+                        <br>
+        
+                        <p><strong>5. Disclosure of Information</strong></p>
+                        <p>We may disclose information when legally required to do so or to protect our legal rights.</p>
+                        <br>
+            
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    
+    <script>
+        // Define the subcategories for each category
+        const categorySelect = document.getElementById('category');
+        const subcategorySelect = document.getElementById('subcategory');
+
+        const subcategories = {
+            96: ['Centrifugal Compressors', 'Reciprocating or Piston Compressors', 'Rotary Screw Compressors', 'Rotary Sliding Vane Compressors'],
+            207: ['Cycling Refrigerated Dryers', 'Heated Desiccant Dryers', 'Heatless Desiccant Dryers', 'Non-Cycling Refrigerated Dryers'],
+            784: ['Air Tank Machines',],
+            259: ['Custom Design & Engineering of a Lamination Press', 'Custom Tape Application Machines', 'Dual-Line Assembly Machines', 'Inline Assembly & Finishing Machines'],
+            691: ['Astronomical Telescope Machines',],
+            1091: ['Dynamic Balancing Machine',],
+            2: ['Heavy Band Saw Machines', 'Light Band Saw Machines (Up to 6)', 'Medium Band Saw Machines (Up to 12)'],
+            1012: ['CNC Bar Feeder Machine', 'Manual Bar Feeder Machine',],
+            544: ['Belt Thunder machines'],
+            563: ['Bench Race Machines',],
+            164: ['3 Roll Plate Bending Machine', '4 Roll Plate Bending Machine', 'CNC Bending Machine', 'Pipe & Tube Bending Machines', 'Roller Bending Machines', 'Sheet Bending Machine'],
+            717: ['Bettiseed machines',],
+            726: ['Bench Velling Machines',],
+            782: ['Blower Machines',],
+            3: ['5 Die 5 Station Bolt Maker / former', '5 Die 6 Station Bolt former / maker', '6 Die 6 Station  Bolt former / maker', '3 Die 3 Station Bolt former / maker', '3 Die 4 station bolt former', '4 Die 4 Station Bolt former/maker', '4 Die 5 Station Bolt Former/ maker', 'NEW - Bolt former / maker'],
+            1285: ['Alenkey Pass bolt', 'Allen flange bolt', 'Anchor bolt / Blind bolt ( American bolt)', 'Blind bolt', 'Carriage / CR  Bolt', 'Eye bolt', 'Flange bolt', 'Hex bolt', 'J bolt', 'Round head bolt', 'Socket / Alenkey bolt', 'Square head bolt', 'T-head bolt', 'Track bolt', 'U bolt'],
+            1028: ['NEW - Bolt Plant', '10mm or 3/8', '12mm or 1/2', '16mm or 5/8', '20mm or 3/4', '22mm or 7/8', '24mm', '25mm or 1', '5 mm or 3/16', '6mm or 1/4', '8mm or 5/16'],
+            100: ['CNC Type Floor Borer Machine', 'CNC Type Horizontal Boring Machine', 'CNC Type Vertical Jig Boring Machine', 'Floor Borer Machine', 'Horizontal Borer Machine', 'Horizontal Jig Boring Machine', 'NC Horizontal boring machine', 'Vertical Boring Machine', 'Vertical Jig Boring Machine'],
+            823: ['Horizontal boring machine', 'NC2 axle boring machines', 'Vertical Boring Machine', 'Zig Boring Machines'],
+            576: ['Bow disc machines'],
+            871: ['Heavy Type Machines', 'Medium Type Machines'],
+            1241: ['Hydraulic Pres Bricks Machine'],
+            384: ['Horizontal Broching Machines', 'Vertical Broching Machines'],
+            705: ['BT30 tool machines'],
+            703: ['BT50 tool machines'],
+            641: ['Cable band and others machines'],
+            1007: ['Electric Cable Wiring Machine'],
+            669: ['caster machines'],
+            1005: ['heavy Duty Caterpillar Machine'],
+            656: ['Center of rotation machines'],
+            1086: ['Automatic fencing chain link machine', 'Semi-automatic fencing chain link machine'],
+            810: ['Chair with casters machines'],
+            328: ['Chamfering Machines (Shaft)'],
+            231: ['Augers', 'Centrifuges', 'Filtration Equipment', 'Mixers', 'Mixers, Gas'],
+            780: ['Chiller machines'],
+            232: ['Balers', 'Chip Processing Systems', 'Used Conveyors'],
+            721: ['Circular table machines'],
+            667: ['Hydraulic Clamping Machine', 'Jaw Clamping machines'],
+            233: ['Blast Cleaning', 'Degreasers', 'Floor Scarifiers', 'Paint Systems & Equipment Including Powder Coating', 'Rolls, Coater', 'Scrubbers'],
+            911: ['Heavy Duty CMM Machines'],
+            109: ['CNC Router Machine', 'CNC Turn Mill Centres', 'CNC Turn Mill Centres ( Twin Spindle)', 'CNC Turning Centre (Single Spindle)', 'CNC Turning Centre (Twin Spindle)'],
+            1172: ['Heavy Coal Feeder Machine', 'Light Coal Feeder Machine', 'Medium Coal Feeder Machine'],
+            16: ['1 Die 1 Blow Open Die Headers', '1 Die 2 Blow Open Die Headers (OPEN DIES)', '1 Die 3 Blow Solid Die', '1Die 1Blow Solid Die (Ball Headers)', '1Die 2Blow Solid Die', '2 Die 2 Blow Header Machine', '2 Die 3 Blow Header Machine', '2 Die 3 Blow Semi Tubular / Pop / Blind Rivet Head', '2 Die 4 Blow Header Machine', '3 Die 3 blow cold header machine', '3 Die 3 Station cold header machine', 'Fully Tubular / Hollow Rivet Headers', 'NEW - 2 Die 3 Blow header', 'NEW - 2 Die 4 Blow header', 'Rivet Making Machines', 'Semi Tubular / Hollow / Pop / Blind Rivet Headers', 'Taper / Cylindrical Roller Machines'],
+            930: ['2 Color Printing Machines', '4 Color Printing Machines'],
+            755: ['0.2kw reciprocating compressor machines', '0.4kw reciprocating compressor machines', '0.75kw reciprocating compressor machines', '2.2 kw scroll compressor machines', '2.2kw Package Compressor machines', '2.2kw reciprocating compressor machines', '22 kw screw compressor machines', '22kw rotary compressor machines', '3.7kw Package Compressor machines', '3.7kw reciprocating compressor machines', '5.5 HP Screw compressor', 'Compressor machines', 'Screw Compressor Machine'],
+            293: ['Horizontal Continuous Casting Machines', 'Vertical Continous Casting Machines'],
+            582: ['Contour machine'],
+            1059: ['CNC Machine conveyor system', 'Fastener conveyor system'],
+            519: ['Cubicle Machines'],
+            969: ['tool and Cutter Machine'],
+            966: ['Bundle Cutting Machine', 'Coil Cutting Machine', 'Paper Cutting Machine', 'Rack cutting Machine'],
+            778: ['Cutting pump Machines'],
+            605: ['Cylinder gauge machines'],
+            987: ['Light duty D Coil Machine'],
+            934: ['ID 400mm X LENGTH 4000m'],
+            643: ['Demagnetizer machines'],
+            645: ['Dial gauge machines'],
+            1191: ['Heavy Die Head Machine', 'Light Die Head Machine', 'Medium Die Head Machine'],
+            707: ['Double-breaking cabinet machines'],
+            507: ['Bar Draw Bench Machines', 'Tube Draw Bench Machines', 'Wire Draw Bench Machines'],
+            751: ['Drawing wagon machines'],
+            628: ['Drill chuck and others machines'],
+            115: ['Bench Drilling Machines', 'Center drill machines', 'CNC Drilling & Tapping Machines', 'Column Drill Machine', 'Deep Hole Drill Machine', 'Desktop high speed drilling machine', 'Double column CNC Drill Machine', 'Drill & Tapping Machine', 'Drill and Milling Machine', 'electric drill machines', 'Gang Drill Machine', 'Gun Drilling Machines', 'Magnet drill machine', 'Multispindle  Drill Machine', 'Piller Drill Machine', 'Radial Drill Machine', 'Robo Drill Machines', 'Robodrill (BT 30)', 'Turret Drill Machine'],
+            909: ['Heavy Duty Drill Grinding Machines'],
+            1097: ['Heavy duty Machine ( 700 to 1500 mm )', 'Light duty Machine ( below 300 mm )', 'Medium duty Machine (300 to 700mm )'],
+            762: ['Dry library machines'],
+            267: ['Baghouse Dust Collectors', 'Cartridge Dust Collectors', 'Cyclone Dust Collectors', 'Industrial Dust Collectors', 'Portable Dust Collectors'],
+            747: ['Eccentricity checker machines'],
+            229: ['CNC Electic Discharge Machine (CNC - EDM)', 'CNC Wire Electric Discharge Machines (CNC - WEDM)', 'Electic Discharge Machine (EDM)', 'Wire Electric Discharge Machines (WEDM)'],
+            637: ['Electric chain block machines'],
+            357: ['Flange Mounting Three Phase Induction Motors', 'Foot Mounting Single Phase Motors', 'Foot Mounting Three Phase Induction Motors ( 3 Ph)'],
+            549: ['Electric pencil Machines'],
+            796: ['Electric power lifter machines'],
+            601: ['electrical tools machines'],
+            697: ['Evacuated ladder machines'],
+            738: ['Exclusive jig machines'],
+            1103: ['Screw extrusion machine', 'Stud Extrusion Machine'],
+            512: ['Single Screw Extruder M/c', 'Stud Extrusion Machine', 'Twin Screw Extruder M/c'],
+            261: ['Eyeletting Machines'],
+            1282: ['Medium duty fabrication structure'],
+            441: ['CNC FACING & CENTERING MACHINES (CNC)', 'FACING & CENTERING MACHINES'],
+            892: ['Heavy Duty Fan Gaurd Machines'],
+            673: ['Fasteners and other die tools', 'Header die tools', 'Threading Die Tools', 'Trimming Die Tools'],
+            1231: ['Fasteners Testing Machine'],
+            291: ['Linear Vibrators', 'Rotary Feeders', 'Vibrating Tables', 'Vibratory Bowl Feeders'],
+            790: ['Fine cut machines'],
+            626: ['Fine tool machines'],
+            279: ['Burnishing Machines', 'Deburring Machines', 'Finishing Machines', 'Polishing Machinery including Buffers', 'Tumbling Equipment Machines'],
+            478: ['CNC Type Gas Cutting Machines (CNC)', 'Gas Cutting Machines'],
+            802: ['Floor polisher machines'],
+            1184: ['Dal And Besan Plant', 'Wheat and Rice Plant'],
+            1257: ['Bakery Plant', 'Dryer', 'Fryums and Popcorn'],
+            973: ['1.5 Ton Capacity', 'Heavy Duty Forklift Machine'],
+            299: ['Foundry Molding Machines'],
+            848: ['Four-claw chuck machines'],
+            269: ['Fume Extractors'],
+            310: ['Annealing Machine', 'Box Type Furnaces', 'Carburising Furnace Machine', 'Continous Furnaces', 'Hardness Process', 'Heat Treatment Process Furnace', 'Oven Machines (Conveyor Type)', 'Tempering Process'],
+            764: ['Fuselage for fusing machines'],
+            500: ['Horizontal Gas Seperators', 'Spherical Gas Seperators', 'Vertical Gas Seperators'],
+            821: ['Gate type flat cutting disc machines'],
+            361: ['Planetary Gear Box', 'Worm Gear Box'],
+            129: ['Bevel Gear Generator Machine', 'Bevel Gear Tester Machine', 'CNC Gear Hobber Machine (CNC)', 'CNC Gear Shaper Machine (CNC)', 'CNC Gear Shaver Machine (CNC)', 'GEAR CHAMFERING MACHINES', 'Gear Deburring Machines', 'Gear Grinding Machines', 'Gear Hob Sharpeners', 'Gear Hobber Machine', 'Gear Lapping Machines', 'Gear Rack Cutting Machines', 'Gear Shaper Machine', 'Gear Shaver Machine', 'Gear Tester Machines', 'Hob Tester Machine', 'Hypoid Cutter Sharpeners'],
+            894: ['Heavy Duty Gear Shaper Machines'],
+            491: ['Heavy Duty Generator Machine', 'Silent Generator (Industrial)'],
+            145: ['Angular Grinding Machine', 'Bearing Race Grinders Machine', 'Belt Grinders Including Sanders Machine', 'Blade Grinding Machine', 'Cam Shaft Grinding Machine', 'Centreless Grinding Machine', 'CNC Centreless Grinding Machine (CNC)', 'CNC Cylindrical Grinding Machine (CNC)', 'CNC Internal Grinders Machine (CNC)', 'CNC Surface Grinding Machines (CNC)', 'CNC Tools and Cutter Grinding Machine', 'Crankpin Grinders Machine', 'Crankshaft Grinding Machine', 'Creep Feed Grinders Machine', 'Cup Grinding Machine', 'Cylindrical Grinding Machine', 'Disc Grinders Machine', 'Double Disk Grinding Machines', 'Double-headed grinder', 'Double-headed grinder machines', 'Drill Grinders Machine', 'Drill Point Grinding Machine', 'Duplex Grinding Machine', 'End Grinders Machine', 'Flute Grinding Machine', 'Form Grinders Machine', 'Hand Grinding Machines', 'Hob Grinders Machine', 'Horizontal Rotary Surface Grinding Machine', 'Hydraulic Grinding Machines', 'Hydraulic Surface Grinding machine', 'Internal Grinders Machine', 'Jig Grinding Machine', 'Knife Grinders Machine', 'Outer Grinder', 'Pedestal Type Grinders  Machine', 'Pipe Grinding Machine', 'Podester Grinding Machine', 'Profile Grinders Machine', 'Punch & Die Grinders Machine', 'Radius Grinders Machine', 'Roll Grinders Machine', 'Rotary Grinding machine', 'Sideway Grinding Machine', 'Spline Heavy Duty Grinding Machine', 'Spline Light Duty Grinding Machine', 'Spline Medium Duty Grinding Machine', 'Surface Grinding Machine', 'Thread/Worm Grinding Machines', 'Tool & Cutter Grinders', 'Tool post grinder', 'Universal Grinding Machine', 'Vertical Rotary Surface Grinding Machine'],
+            385: ['CNC Grooving Machines'],
+            196: ['Heavy Duty Hack Saw Machines', 'Medium Duty Hack Saw Machines'],
+            297: ['Hydraulic Drop Hammers', 'Mechanical Drop Hammers', 'Pneumatic Drop Hammers', 'Pneumatic Forging Hammers'],
+            806: ['Hand Palette machines'],
+            886: ['BFT TYPE MACHINES'],
+            493: ['Plate Type Heat Exchangers', 'Shell and Tube Type Heat Exchangers'],
+            1078: ['Fasteners Bolt Heater Machine', 'Induction Heater Machine (Fasteners)', 'Injection Heater Machine'],
+            596: ['Height gauge machines'],
+            952: ['Heavy duty hexa machine', 'LIght Duty Hexa Machines', 'Medium duty Hexa machine'],
+            271: ['High Pressure Coolant Systems'],
+            613: ['Hob Blade Machines'],
+            825: ['Hobbing Machines', 'NC Hobbing Machine'],
+            840: ['NT50 Holder Machines'],
+            528: ['Fine Hole Processing Machinesq'],
+            611: ['Hole Saw Machines'],
+            828: ['3 Axis Honing Machine', 'Horizontal Honing Machine', 'Vertical Honing Machine'],
+            186: ['Bed Type 3 Axis HMC Machines (3 Axis)', 'Bed Type 4 Axis HMC Machines (4 Axis)', 'Bed Type 5 Axis HMC Machines (5 Axis)', 'CNC Horizontal Machining Centers (HMC)', 'Pallet Type 3 Axis HMC Machines (3 Axis)', 'Pallet Type 4 Axis HMC Machines (4 Axis)', 'Pallet Type 5 Axis HMC Machines (5 Axis)', 'Twin Pallet Horizontal Center'],
+            1176: ['Heavy Hot Forging Plant ( 300 to up)', 'Light Hot Forging Plant ( 100 to Below)', 'Medium Hot Forging Plant ( 100 to300)'],
+            899: ['Heavy Duty Hot Processor Machines'],
+            864: ['Hydraulic Unit Machines'],
+            30: ['Electrical Induction Heaters'],
+            1259: ['Aluminium Billet Making Machine', 'Aluminium Ingots Making Machine', 'Copper Ingot Making Machine', 'Gold Billet Making Machine', 'Gold Ingot Making Machine', 'Silver Billet Making Machine', 'Silver Ingot Making Machine', 'Steel Billet Making Machine', 'Steel Ingot Making Machine'],
+            255: ['CNC Horizontal Injection Moulding Machines', 'Horizontal Injection Moulding Machines', 'Rotary Injection Moulding Machines', 'Vertical Injection Moulding Machines'],
+            594: ['Jack Machines'],
+            880: ['Heavy JCB Machines', 'Light JCB Machines'],
+            736: ['Jet Stove Machines'],
+            679: ['Kerey Machines'],
+            775: ['Kerosene Tank Machines'],
+            534: ['Key Seater Machine'],
+            416: ['CNC Laser Cutting Machines', 'Fiber Laser Cutting Machine', 'Laser Cutting Machines'],
+            165: ['2.5 M Lathe Machines', '4.5-Scale Lathe Machines', '5 Scale Lathe Machines', '6-Scale Lathe Machines', '7 Scale Lathe Machines', 'All Gear Lathe Machine', 'CNC Lathe Machine', 'CNC Heavy Duty Lathe Machine', 'CNC Vertical Turning Lathe (CNC)', 'Desk-Top Lathe Machine', 'Double Column Vertical Lathe Machine', 'Facing Lathe Machines', 'Front Lathe Machines', 'Heavy Duty Lathe Machines', 'Light Duty Machine (Up to DBC 1200mm)', 'Medium Duty Machine (DBC 1200 to 2500mm)', 'Small Lathe Machines', 'Turret Lathe Machine', 'Univershal Heavy Duty Lathe Machines', 'Vertical Turning Lathe'],
+            800: ['Level Cart Machines'],
+            622: ['Leveler Machines'],
+            786: ['Lift Table Machines'],
+            798: ['Lifttler Machines'],
+            816: ['Lighting Fixture Machines'],
+            814: ['Locker For 6 People Machines'],
+            713: ['Loco Disc Machines'],
+            1304: ['10mm', '12mm', '16mm', '20mm', '25mm', '28mm', '32mm', '6mm'],
+            857: ['Long Tap Machines'],
+            553: ['Lubricating Oil Supply Device Machines'],
+            1158: ['M12 Stud Plant'],
+            1159: ['M16 Stud Plant'],
+            831: ['Magnetic Machine'],
+            592: ['Magnifier And Others Machines'],
+            711: ['Manual Hydraulic Pipe Bender Machines'],
+            607: ['Manual Pipe Bender Machines'],
+            730: ['Manual Winch Machines'],
+            517: ['Square Marbal Cutting Machine'],
+            1208: ['Surgical Mask Machine'],
+            740: ['Mass Block Etc Machines'],
+            724: ['MC Power Vice Machines'],
+            685: ['Measuring Instrument Machines'],
+            620: ['Measuring Tool Machines'],
+            1167: [],
+            566: ['Metal Saw Machines'],
+            846: ['Micro Machines'],
+            618: ['Micro Calipers Etc. Machines'],
+            687: ['Micro Cut Bowling Machines'],
+            1042: ['Vertical Milling And Borer Machine'],
+            647: ['Milling Chuck And Others Machines'],
+            166: ['Bed Type Horizontal Milling Machine', 'Bed Type Vertical Milling Machine', 'CNC Universal Milling Machine (CNC)', 'CNC Vertical Milling Machine', 'End Mill Machines', 'Face Mill Machines', 'Horizontal Milling Machine', 'KeyWay Milling Machines', 'Long End Mill Machines', 'Ram Type Milling Machines', 'Ram Type Milling Machines{NT 40}', 'Template/Pantograph Milling Machine', 'Thread/Worm Milling Machine', 'Universal Milling Machine', 'Vertical Milling Machine'],
+            273: ['Mist Collectors'],
+            794: ['Mobile Crane Machines'],
+            771: ['Mobile Filtration Device Machines'],
+            515: ['PET Monofilament Extruder Machine'],
+            788: ['Motor Machines', 'Servomotor Machines'],
+            250: ['Hydraulic Compression Moulding Machine'],
+            22: ['Nail Headers', 'Nail Thread Rolling'],
+            521: ['NC Rotary Machines'],
+            1083: ['Hydraulic Pipe Manufacturer', 'Seamless Pipe Manufacturers'],
+            598: ['Non-Stop Chuck Machines'],
+            701: ['Nozzle Tester Machines'],
+            1148: ['Nut Washer Assemble Machine', 'Nylock Nut Assemble Machine'],
+            23: ['New - Nut Former / Maker', 'Cold Nut Formers', 'Hot Nut Formers'],
+            1181: ['Hot Forging Nut Header Machine'],
+            1288: ['Nut making machine'],
+            1318: ['16mm'],
+            24: ['New - Tapping Machine ( Standard Size )', 'New - Long Stroke Tapping Machine', 'Nut Tapping Machine'],
+            227: ['Offset Printing Machine'],
+            1206: ['Oil Extraction Machine'],
+            264: ['Oil Filtering Systems'],
+            496: ['Horizontal Oil Seperators', 'Spherical Oil Seperators', 'Vertical Oil Seperators'],
+            1209: ['Other'],
+            639: ['Chocolate Wrapping Machines', 'Pouch Packaging Machine'],
+            1113: ['Saw Dust Pallet Machine'],
+            950: ['Heavy Duty Paper Dish Making Machines'],
+            1235: ['5 Die 5 Station Bolt Part Former', '5 Die 5 Station Nut Part Former', '6 Die 6 Station Bolt Part Former', '6 Die 6 Station Nut Part Former', '7 Die 7 Station Bolt Part Former', '7 Die 7 Station Nut Part Former', '8 Die 8 Station Nut Part Former', '8 Die 8 Station Part Former'],
+            635: ['Part-Time Job Machines'],
+            1204: ['Milk Pasteurizer Plant'],
+            1069: ['Bar Draw Piller Machine'],
+            561: ['Pipe Thread Cutting Machines'],
+            182: ['Heavy Duty Planner Machine', 'Medium Duty Planner Machines', 'Multi Purpose Planning Machines', 'Univershal Heavy Duty Lathe Machines'],
+            188: ['CNC Heavy Duty Plano Miller (CNC)', 'Heavy Duty Plano Miller', 'Light Duty Plano Miller'],
+            475: ['CNC Plasma Cutting Machines', 'Plasma Cutting Machines (Manual)'],
+            933: ['Select',],
+            742: ['Platen Machines', 'Stone Plate Machines'],
+            283: ['Plating Equipment'],
+            1128: ['Metal Sheet Plating Machine', 'Pipe Plating Machine', 'Screw Plating Machine', 'SS Plating Machine'],
+            890: ['Heavy Pointing Machines'],
+            1123: ['10 mm or 3/8', '5 mm or 3/16', '6 mm or 1/4', '8 mm or 5/16'],
+            683: ['Portable Ultrasonic Flow Meter Machines'],
+            753: ['Positioner Machines'],
+            1168: ['Heavy Power Coating', 'Light Power Coating', 'Medium Power Coating'],
+            173: ['25 Ton Press', '4 Column Type Hydraulic Power Presses', '4 Column Type Mechanical Power Presses', 'C - Frame Power Press Machine', 'C Type Mechanical Power Press Machine', 'H - Frame Type Hydraulic Power Presses', 'H - Frame Type Mechanical Power Presses', 'Mechanical Inclined Power Presses', 'Open Gap Type Hydraulic Power Presses', 'Open Gap Type Mechanical Power Presses', 'Pneumatic Power Press Machine', 'Vertical Power Press Machine'],
+            792: ['Precision Cutting Machine'],
+            540: ['Baling Press Machine', 'Forging Press Machines', 'Hand Press Machines', 'Mold For Set Press Machines'],
+            380: ['CNC Hydraulic Press Break', 'CNC Press Brake Machines', 'Hydraulic Press Brake Machines', 'Mechanical Press Brake Machines'],
+            884: ['Coining Press Machine', 'Cold Forging Press Machine', 'Deep Drawing Press Machines', 'H - Frame Type Mechanical Press Machine', 'H-Frame Type Hydraulic Press Machine', 'Hydraulic Press Machine', 'Knuckle Joint Press Machine', 'Mechanical Press Machine', 'Paver Block Press Machines', 'Pneumatic Press Machine', 'Screw Press Machine', 'Trimming Press Machine'],
+            163: ['Pressure Die Casting Machine'],
+            624: ['Pressure Gauge Machines'],
+            939: ['Color Printing Machines', 'Label Printing Machines'],
+            29: ['CNC Turret Punch Press Machines', 'Punch Presses'],
+            925: ['650mm Type Machine', 'Round Pipe Making Machine'],
+            1014: ['Medium Reeling Machine'],
+            663: ['Regulator Machines'],
+            1246: ['Welding Machinery'],
+            709: ['Rockwell hardness tester machines'],
+            905: ['Rolling Shutter Machines', 'Sheet Cutting Machines'],
+            609: ['Bright Bar Rolling Mill Plants', 'Rolling die dies machines'],
+            990: ['CNC Plate Rolling Machine', 'Rack Rolling Machine'],
+            922: ['Round Rolling Plant', 'TMT Rolling mill Conveyors'],
+            1094: ['CNC Router Machine'],
+            998: ['heavy duty Rubber Molding Machine'],
+            584: ['Saper machines'],
+            689: ['Saver saw machines'],
+            920: ['Heavy Duty Scan Machines'],
+            536: ['Scrap Cutter'],
+            1289: ['Select'],
+            1038: ['3mm or 2/16', '4 mm or  5/32', '5mm or 3/16', '6mm or 1/4', '8mm or 5/16', 'NEW - Header Machine', 'NEW - Threading Machine'],
+            122: ['Friction Screw Press Machines', 'Manual Screw Press Machines'],
+            192: ['Bolt Shaver (Chamfering) Machines'],
+            90: ['Double stroke Self Drilling Screw Forming Machines', 'Self Drilling Screw Forming Machines', 'Self drilling screw plant', 'Single stroke Self Drilling Screw Forming Machines'],
+            1223: ['NEW - Semi Tubular / Hollow / Pop / Blind Rivet He'],
+            665: ['Shakugana machines'],
+            203: ['Heavy Duty Shaper Machine', 'Light Duty Shaper Machine (Up to 24)', 'Medium Duty Shaper Machine (Up to 36)'],
+            184: ['Billet Shearing Machine', 'CNC Shearing Presses', 'Erfurt Billet Shearing Machine', 'Hydraulic Shearing Presses', 'Mechanical Shearing Presses', 'Pneumatic Shearing Presses', 'Power Shearing Machine', 'Vibro Shearing Machine'],
+            812: ['Shoebox Machines'],
+            675: ['Side Cutter Machines'],
+            681: ['Side Cutter Arbor Machines'],
+            649: ['Slanted Chuck Machines'],
+            853: ['Sleeve Machines'],
+            559: ['Sliding circular saw'],
+            560: ['Sliding circular saw Machines'],
+            719: ['Slope Index Machines'],
+            19: ['Double Cutting Head Slotting Machine', 'End Slotting Machine', 'Head Slotting', 'Shank Slotting'],
+            421: ['Heavy Duty Slotting Machine', 'Large Strock Slotting Machines', 'Light Duty Slotting Machine', 'Medium Strock Slotting Machines (Up to 12)'],
+            551: ['Small Index Machines'],
+            651: ['Small Scroll Chuck Machines'],
+            1251: ['Solar plant Machine'],
+            907: ['HBM Machines'],
+            917: ['Heavy Duty Spring Cutting Machines', 'Light Duty Spring Cutting Machine'],
+            1198: ['Heavy Duty Spring Washer Making Machine', 'Light Duty Spring Washer Making Machine', 'Medium Duty Spring Washer Making Machine'],
+            978: ['150 KVA Stabilizer'],
+            671: ['Stamp Machines'],
+            1290: ['Stud making machine'],
+            1155: ['M10 Stud Plant', 'M12 Stud Plant', 'M16 Stud Plant', 'M8 Stud Plant'],
+            568: ['Super Finishing Canna Board Machines'],
+            1249: ['Piston and Gudgeon Pin Grinding Machine'],
+            287: ['Honning Machines', 'Lapping Machines'],
+            1187: ['Heavy Duty Sutli Plant', 'Light Duty Sutli Plant', 'Medium Duty Sutli Plant'],
+            958: ['Heavy Duty Sutli Plant', 'Light Duty Sutli Plant', 'Medium Duty Sutli Plant'],
+            658: ['T Slot Cutter Machines'],
+            249: ['Multi Punch Tablet Press Machines', 'Single Punch Tablet Press Machines', 'Single Rotary Tablet Press Machines'],
+            1314: ['Degreasing Tank', 'Lime Tank', 'Rinsing Tank'],
+            773: ['Tank with Magepepa Machines'],
+            632: ['Long Reamer Machines', 'Tap ? Dice ? Reamer Machines'],
+            883: ['Tap Grinding Machines'],
+            838: ['Tapper Machines'],
+            677: ['Tapping Chuck Machines'],
+            557: ['Multi-Axis Tapping Machine'],
+            1331: ['Sub cat 1'],
+            896: ['Universal Testing Machines'],
+            1001: ['Textile Machines All Unit'],
+            943: ['Heavy Duty Thermic Boiler Machines', 'Heavy Duty Thremic Boiler Machines', 'Light Duty Thermic Boiler Machines', 'Light Duty Thremic Boiler Machines'],
+            18: ['2 Die Cylindrical Die Thread Rolling Machines', '3 Die Cylindrical Die Thread Rolling Machines', 'Automatic Flat Die Thread Rolling Machine', 'Flat Die Thread Rolling Machines', 'Flat Die Thread Rolling With Washer Assembly Units', 'Planetary Die Thread Rolling Machine', 'Rotary Rolling Machine', 'Semi Automatic Flat Die Thread Rolling Machine', 'Stud / Headless Thread Rolling Machines'],
+            542: ['Three Roll Machines'],
+            615: ['Three-Point Micro Machines'],
+            630: ['Throw Away Byte Etc. Machines', 'Throwaway Byte Machines'],
+            603: ['Thunder Machines'],
+            699: ['Tool Cabinet Machines'],
+            859: ['Tool Presetter Machines'],
+            861: ['Tool Wagon Machines'],
+            833: ['BT40 Tool Machines', 'BT50 Tool Machines', 'Shrink Fit Tool Machines'],
+            976: ['Heavy Duty Transformer Machine', 'Light Duty Transformer Machine'],
+            1065: ['Traub Machine (Large)', 'Traub Machine (Medium)', 'Traub Machine (Small)'],
+            94: ['Automatic Trimming Machines', 'Semi Automatic Trimming Machines'],
+            745: ['Trout Machines'],
+            971: ['Polygon Turning Machine'],
+            1003: ['Heavy Duty Turret Punch Machine'],
+            874: ['Type Writing Machines'],
+            1074: ['Stud U Bolt Machine'],
+            1017: ['Dandrea U Center Machine'],
+            901: ['Heavy Duty Ultrasonic Testing Machines'],
+            556: ['Upright drilling machine'],
+            1105: ['Light Duty Gathering Machine', 'Medium Duty Gathering Machine'],
+            275: ['Vacuum Chambers'],
+            580: ['Vader Machine'],
+            936: ['20kg Jewelry Vibrator', 'Jewellery 1000g Vibrator Machines', 'Jewellery 500g Vibrator Machines'],
+            728: ['Vice Versa Machines'],
+            113: ['3 Axis VMC Machines', '4 Axis VMC Machines', '5 Axis VMC Machines', 'Drill Tap Centre VMC Machine', 'Gantry & Double Column Machining Centers'],
+            1217: ['NEW - Bolt Washer Assembly Machine', 'NEW - Nut Washer Assembly Machine', 'NEW - Screw Washer Assembly Machine', 'Screw Washer Assembly Machine'],
+            419: ['Water Jet Cutting Machines'],
+            808: ['Weight Shed Machines'],
+            391: ['Arc Welding Machines', 'Butt Welding Machines', 'Column & Boom Welding Machines', 'Laser Welding Machines', 'Project Welding Machine', 'Seam Welding Machines', 'Spot Welding Machines', 'TIG/MIG Welding Machines', 'Welding Positioners'],
+            1272: ['Automatic Wet Wipes Machine', 'Semi Automatic Wet Wipes Machine'],
+            547: ['Wheel Balancer Machines'],
+            732: ['Wheel Cutting Machine'],
+            928: ['Second Hand Wheel For Machines'],
+            693: ['Whetstone Balance Measuring Machine'],
+            867: ['White Coal Machines'],
+            876: ['CNC Wire Cut Machines', 'Wire Cut Machines'],
+            26: ['Barbed Wire Machine', 'Bright Dish Polishing Machine', 'Chain Link Fence Machine', 'Horizontal Wire Draw Machine', 'In Liner Wire Drawer', 'Spring Coilers', 'Uncoilers / Payoffs', 'Wire Bending Machine', 'Wire Drawers, Bull Block', 'Wire Drawers, Continuous', 'Wire Drawing Machines (In Line)', 'Wire Forming', 'Wire Straightener Machines', 'Wire Straightner & Cutting Machines'],
+            1270: ['Laminate Wood Working Machine', 'Wood Plant'],
+            749: ['Workbench Machines'],
+            869: ['Xerox Machines'],
+            1278: ['Small Duty Zinc Plating Plant', 'Large Duty Zinc Plating Plant', 'Medium Duty Zinc Plating Plant'],
+
+
+        };
+
+        // Event listener to change subcategory options based on category selection
+        categorySelect.addEventListener('change', function () {
+            const selectedCategory = this.value;
+
+            // Clear previous subcategories
+            subcategorySelect.innerHTML = '<option>-- Select Sub Category --</option>';
+
+            // If a valid category is selected, populate the subcategory dropdown
+            if (subcategories[selectedCategory]) {
+                subcategories[selectedCategory].forEach(function (subcategory) {
+                    const option = document.createElement('option');
+                    option.textContent = subcategory;
+                    subcategorySelect.appendChild(option);
+                });
+            }
+        });
+    </script>
+
+
+    <script src="script/seller.js"></script>
+    <script src="script/sub_category.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</body>
+
+</html>

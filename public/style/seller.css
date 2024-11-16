@@ -1,0 +1,332 @@
+/* General Styles */
+body {
+    background-color: #f7fafc;
+    font-family:'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Header */
+.header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 1rem 0;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+    margin-right: 0.5rem;
+    flex: 1;
+}
+
+.search-box button {
+    background-color: #e5e7eb;
+    color: black;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.success-message {
+    background-color: #c6f6d5;
+    color: #22543d;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Flexbox Layout for Main Sections */
+.main-layout {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+
+}
+
+.left-side, .right-side {
+    flex: 1;
+}
+
+.left-side {
+    max-width: 30%;
+}
+
+.right-side {
+    max-width: 70%;
+}
+
+.card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* User Info */
+.user-info {
+    margin-bottom: 1rem;
+}
+
+.user-details {
+    display: flex;
+    align-items: center;
+}
+
+.user-details img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.membership {
+    margin-top: 1rem;
+}
+
+.member-status {
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+/* Product Status and Manage Tools Form */
+.product-status .status-details {
+    position: relative;
+}
+
+.button-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+button {
+    margin-left: auto;
+}
+
+/* Manage Your Account */
+.manage-account {
+    margin-top: 2rem;
+    padding-left: 2rem;
+}
+
+.manage-account ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.manage-account ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.manage-account ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer h3 {
+    font-weight: bold;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.social-icons a {
+    margin-right: 0.5rem;
+    color: white;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.product-status {
+    /* Ensure that no fixed height is set */
+    height: auto;
+
+    /* Optional: Add padding or margins to control spacing */
+    padding: 16px;
+    margin-bottom: 16px;
+
+    /* Optional: Ensure content doesn't overflow */
+    overflow: auto;
+}
+
+.imp {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+
+/* Responsive Styles */
+/* General Responsive Layout */
+@media (max-width: 768px) {
+    .left-side, .right-side {
+        max-width: 100%;
+        margin-bottom: 1rem; /* Add spacing between sections */
+    }
+
+    /* Search box responsiveness */
+    .search-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .search-box input, .search-box button {
+        width: 100%;
+    }
+
+    /* Button in the status section */
+    .button-container {
+        position: static; /* Reset button position to be inline */
+        text-align: center; /* Center the button horizontally */
+    }
+
+    button {
+        width: 100%; /* Ensure the button stretches full width on small screens */
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Navigation responsiveness */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    /* Button Responsiveness */
+    button {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    .button-container {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 430px) {
+    /* Adjust general layout for very small screens */
+    .container {
+        width: 100%;
+        padding: 0 10px; /* Add some padding */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Reduce font size for headers */
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .search-box input, .search-box button {
+        width: 100%;
+    }
+
+    .left-side, .right-side {
+        max-width: 100%;
+    }
+
+    .left-side {
+        padding: 0;
+    }
+
+    .right-side {
+        padding: 0;
+    }
+
+    .manage-account ul li {
+        padding: 0.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+}
+

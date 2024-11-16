@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Machines</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-mQ93aTfg3KTRr+5g9S8R77KbsJT7fHA5bcr/MXlzTGR9iZ/eI1Nx5g5J+ZXdzl0y" crossorigin="anonymous">
+    <!-- tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="style/product.css">
+    <link rel="stylesheet" href="style/header_footer.css">
+
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Angular JS -->
+    <script src="script/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+    <header>
+        <div class="top-bar">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div>
+                    <span>Follow Us:</span>
+                    <span class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </span>
+                </div>
+                <div class="auth-links">
+                    <!--LogIn Button trigger modal -->
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-user"></i> Log In
+                    </button>
+
+
+                    <!--LogIn Modal -->
+                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="exampleModalLabel">Sign in to our platform</h4>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    <form method="post">
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Your email</label>
+                                            <input type="email" class="form-control" id="txtLogin_email" required=""
+                                                placeholder="name@company.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Your password</label>
+                                            <input type="password" class="form-control" id="txtLogin_password"
+                                                required="" placeholder="••••••••">
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <div class="form-check"></div>
+                                            <a href="#" class="form-text" data-bs-toggle="modal"
+                                                data-bs-target="#forgotModal">Forgot Password?</a>
+                                        </div>
+
+                                    </form>
+                                    <button type="button" class="btn btn-primary w-100" id="login">Login to your
+                                        account</button>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="text-center w-100">
+                                        <span>Not registered? <a href="seller.html" data-bs-toggle="modal"
+                                                data-bs-target="#signupModal" style="color:#2b6cb0">Create
+                                                account</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Forgot Modal -->
+                    <div class="modal fade" id="forgotModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="exampleModalLabel">Forgot Password</h4>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    <form method="post">
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Enter Registered Email</label>
+                                            <input type="email" class="form-control" id="txtForgot_email" required=""
+                                                placeholder="name@company.com">
+                                        </div>
+                                    </form>
+                                    <span id="btn-forgot">*</span>
+                                    <button type="button" class="btn btn-primary w-100 center"
+                                        id="forgot">Submit</button>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="login-link w-100">
+                                        <p>Already A Member? <a href="#" data-bs-toggle="modal"
+                                                data-bs-target="#loginModal">LOGIN HERE</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- SignUp trigger Modal -->
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#signupModal">
+                        <i class="fas fa-user-plus"></i> Sign up
+                    </button>
+
+                    <!-- Sign up Modal -->
+                    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="exampleModalLabel">REGISTER AN ACCOUNT</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    <form method="post">
+                                        <!-- Login Information Section -->
+                                        <div class="form-section">
+                                            <h5>Login Information</h5>
+                                            <div class="mb-3">
+                                                <input class="form-control" id="txtEmail" placeholder="Login Email *"
+                                                    required="" type="email" />
+                                                <div class="form-text">
+                                                    <i class="fas fa-info-circle"></i> You will get updates on this
+                                                    email ID
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <input class="form-control" id="txtPwd"
+                                                        placeholder="Create Password *" required="" type="password" />
+                                                    <span id="pwdError" class="text-danger"></span>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <input class="form-control" id="txtConfirmPwd"
+                                                        placeholder="Re-enter Password *" required="" type="password" />
+                                                    <span id="confirmPwdError" class="text-danger"></span>
+                                                </div>
+                                                <div id="passwordError" class="form-text"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Contact Information Section -->
+                                        <div class="form-section">
+                                            <h5>Contact Information</h5>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <input class="form-control" id="txtName" placeholder="Full Name *"
+                                                        required="" type="text" />
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <input class="form-control" id="txtCompany_name"
+                                                        placeholder="Company Name *" required="" type="text" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <textarea class="form-control" id="txtCompany_detail"
+                                                        placeholder="Company Details *" required="" rows="3"></textarea>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <textarea class="form-control" id="txtAddress"
+                                                        placeholder="Address *" required="" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 mb-3">
+                                                    <input class="form-control" id="txtCountry" placeholder="Country *"
+                                                        required="" type="text" />
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <input class="form-control" id="txtState" placeholder="State *"
+                                                        required="" type="text" />
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <input class="form-control" id="txtCity" placeholder="City *"
+                                                        required="" type="text" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-2 mb-3">
+                                                    <input class="form-control" id="txtISD" placeholder="+91"
+                                                        value="+91" required="" type="text" />
+                                                </div>
+                                                <div class="col-md-10 mb-3">
+                                                    <input class="form-control" id="txtNumber"
+                                                        placeholder="Mobile Number" required="" type="text" />
+                                                    <div class="form-text">Format: ISD - Number</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" id="terms" required="" type="checkbox" />
+                                            <label class="form-check-label" for="terms">
+                                                Yes, I agree to all the <a href="#" data-bs-toggle="modal" data-bs-target="#TermsAndConditions">Terms &amp; Conditions</a>
+                                            </label>
+                                        </div>
+                                    </form>
+                                    <span id="btn-submit">*</span>
+                                    <button class="btn btn-primary w-100" type="button" id="createAccount">Create My
+                                        Account</button>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="login-link w-100">
+                                        <p>Already A Member? <a href="#" data-bs-toggle="modal"
+                                                data-bs-target="#loginModal">LOGIN HERE</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="logo-bar">
+            <div class="container d-flex justify-content-between align-items-center">
+                <img src="asset/logo1.png" style="height: 80px; width: auto; margin-left: 50px;" alt=".com logo">
+                <div class="btn-group">
+                    <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#searchMachine">Search Machine
+                        &#128269;</a>
+
+                    <!--Search Machine Modal -->
+                    <div class="modal fade" id="searchMachine" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="exampleModalLabel">Search Machine</h4>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    <form method="post">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-4">
+                                            <div>
+                                                <label>Category <span class="imp">*</span></label>
+                                                <select class="w-full border border-gray-300 p-2 rounded"
+                                                    style="background-color: #2d3748;" id="category1" required="">
+                                                    <option value=""> -- Select Category -- </option>
+                                                    <option value="96">Air Compressors</option>
+                                                    <option value="207">Air Dryers</option>
+                                                    <option value="784">Air tank</option>
+                                                    <option value="259">Assembly Machines</option>
+                                                    <option value="691">Astronomical telescope</option>
+                                                    <option value="1091">Balancing Machine</option>
+                                                    <option value="2">Band Saw Machines</option>
+                                                    <option value="1012">Bar Feeder Machine </option>
+                                                    <option value="544">Belt Thunder</option>
+                                                    <option value="563">Bench Race</option>
+                                                    <option value="164">Bending Machines</option>
+                                                    <option value="717">Bettiseed</option>
+                                                    <option value="726">Beveling machine</option>
+                                                    <option value="782">Blower</option>
+                                                    <option value="3">Bolt Maker / Bolt Formers</option>
+                                                    <option value="1285">Bolt making machine</option>
+                                                    <option value="1028">Bolt Plant </option>
+                                                    <option value="100">Borer Machine</option>
+                                                    <option value="823">Boring Machines</option>
+                                                    <option value="576">Bow disc</option>
+                                                    <option value="871">Box Making Machines</option>
+                                                    <option value="1241">Bricks Machine</option>
+                                                    <option value="384">Broching Machines</option>
+                                                    <option value="705">BT30 tool</option>
+                                                    <option value="703">BT50 tool</option>
+                                                    <option value="641">Cable band and others</option>
+                                                    <option value="1007">Cable Wiring Machine </option>
+                                                    <option value="669">caster</option>
+                                                    <option value="1005">Caterpillar Machine </option>
+                                                    <option value="656">Center of rotation</option>
+                                                    <option value="1086">Chain Link Machine</option>
+                                                    <option value="810">Chair with casters</option>
+                                                    <option value="328">Chamfering Machines</option>
+                                                    <option value="231">Chemical Processing Equipment</option>
+                                                    <option value="780">Chiller</option>
+                                                    <option value="232">Chip, Recycling & Scrap Equipments</option>
+                                                    <option value="721">Circular table</option>
+                                                    <option value="667">Clamping Machines</option>
+                                                    <option value="233">Cleaning, Painting & Washing Equipments</option>
+                                                    <option value="911">CMM Machines</option>
+                                                    <option value="109">CNC Machine</option>
+                                                    <option value="1172">Coal Feeder Machine</option>
+                                                    <option value="16">Cold Headers</option>
+                                                    <option value="930">Color Printing Machines</option>
+                                                    <option value="755">Compressor Machine </option>
+                                                    <option value="293">Continuous Casting Machines</option>
+                                                    <option value="582">Contour machine</option>
+                                                    <option value="1059">Conveyor</option>
+                                                    <option value="519">Cubicle</option>
+                                                    <option value="969">Cutter Machine </option>
+                                                    <option value="966">Cutting Machine </option>
+                                                    <option value="778">Cutting pump </option>
+                                                    <option value="605">Cylinder gauge</option>
+                                                    <option value="987">D Coil Machine </option>
+                                                    <option value="934">Deep Hole Boring Machines</option>
+                                                    <option value="643">Demagnetizer</option>
+                                                    <option value="645">Dial gauge</option>
+                                                    <option value="1191">Die Head Machine</option>
+                                                    <option value="707">Double-breaking cabinet</option>
+                                                    <option value="507">Draw Bench Machines</option>
+                                                    <option value="751">Drawing wagon</option>
+                                                    <option value="628">Drill chuck and others</option>
+                                                    <option value="115">Drill Machine</option>
+                                                    <option value="909">Drill Point Grinding Machines</option>
+                                                    <option value="1097">Drum Polishing Machine</option>
+                                                    <option value="762">Dry library</option>
+                                                    <option value="267">Dust Collectors</option>
+                                                    <option value="747">Eccentricity checker</option>
+                                                    <option value="229">Electic Discharge Machine (EDM)</option>
+                                                    <option value="637">Electric chain block</option>
+                                                    <option value="357">Electric Motors</option>
+                                                    <option value="549">Electric pencil</option>
+                                                    <option value="796">Electric power lifter</option>
+                                                    <option value="601">electrical tools</option>
+                                                    <option value="697">Evacuated ladder</option>
+                                                    <option value="738">Exclusive jig</option>
+                                                    <option value="1103">Extrusion Machine</option>
+                                                    <option value="512">Extrusion Machines (Plastic)</option>
+                                                    <option value="261">Eyeletting Machines</option>
+                                                    <option value="1282">Fabrication for construction</option>
+                                                    <option value="441">FACING & CENTERING MACHINERY</option>
+                                                    <option value="892">Fan Gaurd Machines</option>
+                                                    <option value="673">Fasteners and others</option>
+                                                    <option value="1231">Fasteners Inspection Machine </option>
+                                                    <option value="291">Feeder Systems</option>
+                                                    <option value="790">Fine cut</option>
+                                                    <option value="626">Fine tool</option>
+                                                    <option value="279">Finishing Machines</option>
+                                                    <option value="478">Flame Cutting Machines</option>
+                                                    <option value="802">Floor polisher</option>
+                                                    <option value="1184">Flour Plant</option>
+                                                    <option value="1257">Food Machinery </option>
+                                                    <option value="973">Forklift Machine </option>
+                                                    <option value="299">Foundry Molding Machines</option>
+                                                    <option value="848">Four-claw chuck</option>
+                                                    <option value="269">Fume Extractors</option>
+                                                    <option value="310">Furnaces & heat treatment system</option>
+                                                    <option value="764">Fuselage for fusing</option>
+                                                    <option value="500">Gas Seperators</option>
+                                                    <option value="821">Gate type flat cutting disc</option>
+                                                    <option value="361">Gear Box</option>
+                                                    <option value="129">Gear Machinery</option>
+                                                    <option value="894">Gear Shaper Machines</option>
+                                                    <option value="491">Generator (Industrial)</option>
+                                                    <option value="145">Grinding Machine</option>
+                                                    <option value="385">Grooving Machines</option>
+                                                    <option value="196">Hack Saw Machines</option>
+                                                    <option value="297">Hammer Press Machines</option>
+                                                    <option value="806">Hand Palette</option>
+                                                    <option value="886">HBM MACHINES</option>
+                                                    <option value="493">Heat Exchangers</option>
+                                                    <option value="1078">Heater Machine</option>
+                                                    <option value="596">Height gauge</option>
+                                                    <option value="952">Hexa Machines</option>
+                                                    <option value="271">High Pressure Coolant Systems</option>
+                                                    <option value="613">Hob blade</option>
+                                                    <option value="825">Hobbing Machines</option>
+                                                    <option value="840">Holder</option>
+                                                    <option value="528">Hole Processing Machines</option>
+                                                    <option value="611">Hole saw</option>
+                                                    <option value="828">Honing Machines</option>
+                                                    <option value="186">Horizontal Machining Centres (HMC)</option>
+                                                    <option value="1176">Hot Forging Plant</option>
+                                                    <option value="899">Hot Processor Machines</option>
+                                                    <option value="864">hydraulic unit</option>
+                                                    <option value="30">Industrial Heaters</option>
+                                                    <option value="1259">Ingots / Billet making machine</option>
+                                                    <option value="255">Injection Moulding Machines (Plastic)</option>
+                                                    <option value="594">jack</option>
+                                                    <option value="880">JCB Machines</option>
+                                                    <option value="736">Jet stove</option>
+                                                    <option value="679">Kerey</option>
+                                                    <option value="775">Kerosene tank machines</option>
+                                                    <option value="534">Key seater</option>
+                                                    <option value="416">Laser Machines</option>
+                                                    <option value="165">Lathe Machines</option>
+                                                    <option value="800">Level cart</option>
+                                                    <option value="622">Leveler</option>
+                                                    <option value="786">Lift table</option>
+                                                    <option value="798">Lifttler</option>
+                                                    <option value="816">Lighting fixture</option>
+                                                    <option value="814">Locker for 6 people</option>
+                                                    <option value="713">Loco disc</option>
+                                                    <option value="1304">Long Full Thread Stud Plant </option>
+                                                    <option value="857">Long tap</option>
+                                                    <option value="553">Lubricating oil supply device</option>
+                                                    <option value="1158">M12 Stud Plant</option>
+                                                    <option value="1159">M16 Stud Plant</option>
+                                                    <option value="831">Magnetic machine</option>
+                                                    <option value="592">Magnifier and others</option>
+                                                    <option value="711">Manual hydraulic pipe bender</option>
+                                                    <option value="607">Manual pipe bender</option>
+                                                    <option value="730">Manual winch</option>
+                                                    <option value="517">MARBAL CUTTING MACHINE</option>
+                                                    <option value="1208">Mask making machine </option>
+                                                    <option value="740">Mass block etc</option>
+                                                    <option value="724">MC power vice</option>
+                                                    <option value="685">Measuring instrument</option>
+                                                    <option value="620">Measuring tool</option>
+                                                    <option value="1167">Medium Power Coating</option>
+                                                    <option value="566">Metal saw</option>
+                                                    <option value="846">micro</option>
+                                                    <option value="618">Micro calipers etc.</option>
+                                                    <option value="687">Micro Cut Bowling</option>
+                                                    <option value="1042">Milling and borer machine </option>
+                                                    <option value="647">Milling chuck and others</option>
+                                                    <option value="166">Milling machine</option>
+                                                    <option value="273">Mist Collectors</option>
+                                                    <option value="794">Mobile crane</option>
+                                                    <option value="771">Mobile Filtration Device machines</option>
+                                                    <option value="515">Monofilament Brush Making machine (Plastic)
+                                                    </option>
+                                                    <option value="788">motor</option>
+                                                    <option value="250">Moulding Machines (Foundry)</option>
+                                                    <option value="22">Nail Making Machines</option>
+                                                    <option value="521">NC rotary</option>
+                                                    <option value="1083">New Pipe Manufacturer </option>
+                                                    <option value="598">Non-stop chuck</option>
+                                                    <option value="701">Nozzle Tester</option>
+                                                    <option value="1148">Nut Assemble Machine</option>
+                                                    <option value="23">Nut Formers / Nut Makers</option>
+                                                    <option value="1181">Nut Header Machine</option>
+                                                    <option value="1288">Nut making machine</option>
+                                                    <option value="1318">Nut Plant </option>
+                                                    <option value="24">Nut Tapping machines</option>
+                                                    <option value="227">Offset Printing Machine</option>
+                                                    <option value="1206">Oil extraction machine </option>
+                                                    <option value="264">Oil Filtering Systems</option>
+                                                    <option value="496">Oil Seperators</option>
+                                                    <option value="1209">Other</option>
+                                                    <option value="639">packaging machine</option>
+                                                    <option value="1113">Pallet Machine</option>
+                                                    <option value="950">PAPER DISH MAKING MACHINES</option>
+                                                    <option value="1235">Part former</option>
+                                                    <option value="635">Part-Time Job</option>
+                                                    <option value="1204">Pasteurizer Plant</option>
+                                                    <option value="1069">Piller machine </option>
+                                                    <option value="561">Pipe Thread Cutting Machines</option>
+                                                    <option value="182">Planner Machines</option>
+                                                    <option value="188">Plano Miller</option>
+                                                    <option value="475">Plasma Machines</option>
+                                                    <option value="933">Plastic Molding Machines</option>
+                                                    <option value="742">Platen</option>
+                                                    <option value="283">Plating Equipment</option>
+                                                    <option value="1128">Plating Machine</option>
+                                                    <option value="890">Pointing Machines</option>
+                                                    <option value="1123">Pop Rivet Plant </option>
+                                                    <option value="683">Portable ultrasonic flow meter</option>
+                                                    <option value="753">Positioner</option>
+                                                    <option value="1168">Power Coating</option>
+                                                    <option value="173">Power Press Machines</option>
+                                                    <option value="792">Precision cutting machine</option>
+                                                    <option value="540">Press</option>
+                                                    <option value="380">Press Brake machines</option>
+                                                    <option value="884">Press Machine </option>
+                                                    <option value="163">Pressure die casting Machine</option>
+                                                    <option value="624">Pressure gauge</option>
+                                                    <option value="939">Printing Machines</option>
+                                                    <option value="29">Punching Machines</option>
+                                                    <option value="925">PVC Machine </option>
+                                                    <option value="1014">Reeling Machine </option>
+                                                    <option value="663">Regulator</option>
+                                                    <option value="1246">Robot Machinery</option>
+                                                    <option value="709">Rockwell hardness tester</option>
+                                                    <option value="905">Roll Forming Machines</option>
+                                                    <option value="609">Rolling die dies</option>
+                                                    <option value="990">Rolling Machine</option>
+                                                    <option value="922">Rolling Mill Plant</option>
+                                                    <option value="1094">Router Machine</option>
+                                                    <option value="998">Rubber Molding Machine </option>
+                                                    <option value="584">Saper</option>
+                                                    <option value="689">Saver saw</option>
+                                                    <option value="920">Scan Machines</option>
+                                                    <option value="536">Scrap Cutter</option>
+                                                    <option value="1289">Screw making machine</option>
+                                                    <option value="1038">Screw Plant</option>
+                                                    <option value="122">Screw Press Machines</option>
+                                                    <option value="192">Screw/Bolt/Stud Shavers (Chamfering) Machines
+                                                    </option>
+                                                    <option value="90">Self Drilling Screw Forming Machine</option>
+                                                    <option value="1223">Semi Tubular / Hollow / Pop / Blind Rivet
+                                                        Headers</option>
+                                                    <option value="665">Shakugana</option>
+                                                    <option value="203">Shaper Machine</option>
+                                                    <option value="184">Shearing Machine</option>
+                                                    <option value="812">Shoebox</option>
+                                                    <option value="675">Side cutter</option>
+                                                    <option value="681">Side cutter arbor</option>
+                                                    <option value="649">Slanted chuck</option>
+                                                    <option value="853">sleeve</option>
+                                                    <option value="559">Sliding circular saw</option>
+                                                    <option value="560">Sliding circular saw Machines</option>
+                                                    <option value="719">Slope index</option>
+                                                    <option value="19">Slotting Machine (Fasteners)</option>
+                                                    <option value="421">Slotting Machines</option>
+                                                    <option value="551">Small index </option>
+                                                    <option value="651">Small scroll chuck</option>
+                                                    <option value="1251">Solar plant Machine</option>
+                                                    <option value="907">SPM Machine</option>
+                                                    <option value="917">SPRING CUTTING MACHINES</option>
+                                                    <option value="1198">Spring Washer Making Machine</option>
+                                                    <option value="978">Stabilizer</option>
+                                                    <option value="671">Stamp</option>
+                                                    <option value="1290">Stud making machine</option>
+                                                    <option value="1155">Stud Plant</option>
+                                                    <option value="568">Super finishing canna board</option>
+                                                    <option value="1249">Super Finishing machine</option>
+                                                    <option value="287">Super finishing Machines</option>
+                                                    <option value="1187">Sutli Plant</option>
+                                                    <option value="958">Swing Machine </option>
+                                                    <option value="658">T Slot Cutter</option>
+                                                    <option value="249">Tablet Press Machines</option>
+                                                    <option value="1314">Tank</option>
+                                                    <option value="773">Tank with Magepepa machines</option>
+                                                    <option value="632">Tap ? Dice ? Reamer</option>
+                                                    <option value="883">Tap Grinding Machines</option>
+                                                    <option value="838">Tapper</option>
+                                                    <option value="677">Tapping chuck</option>
+                                                    <option value="557">Tapping Machine</option>
+                                                    <option value="1331">test main cat</option>
+                                                    <option value="896">Testing Machines</option>
+                                                    <option value="1001">Textile Machine </option>
+                                                    <option value="943">Thermic Boiler Machines</option>
+                                                    <option value="18">Threading Machine</option>
+                                                    <option value="542">Three roll</option>
+                                                    <option value="615">Three-point micro</option>
+                                                    <option value="630">Throwaway byte</option>
+                                                    <option value="603">Thunder</option>
+                                                    <option value="699">Tool cabinet</option>
+                                                    <option value="859">Tool presetter</option>
+                                                    <option value="861">Tool Wagon</option>
+                                                    <option value="833">Tooling</option>
+                                                    <option value="976">Transformer Machine </option>
+                                                    <option value="1065">Traub machine</option>
+                                                    <option value="94">Trimming Machines</option>
+                                                    <option value="745">trout</option>
+                                                    <option value="971">Turning Machine </option>
+                                                    <option value="1003">Turret punch Machine </option>
+                                                    <option value="874">Type Writing Machines</option>
+                                                    <option value="1074">U Bolt machine</option>
+                                                    <option value="1017">U Center MACHINE </option>
+                                                    <option value="901">Ultrasonic Testing Machines</option>
+                                                    <option value="556">Upright drilling machine</option>
+                                                    <option value="1105">Upsetter (Metal Gathering Machine)</option>
+                                                    <option value="275">Vacuum Chambers</option>
+                                                    <option value="580">Vader machine</option>
+                                                    <option value="936">Vibrator Machines</option>
+                                                    <option value="728">Vice versa</option>
+                                                    <option value="113">VMC ( Vertical Machining Centres )</option>
+                                                    <option value="1217">WASHER ASSEMBLY MACHINE</option>
+                                                    <option value="419">Water Jet Machines</option>
+                                                    <option value="808">Weight shed</option>
+                                                    <option value="391">Welding Machines</option>
+                                                    <option value="1272">Wet Wipes Machine</option>
+                                                    <option value="547">Wheel balancer</option>
+                                                    <option value="732">Wheel cutting machine</option>
+                                                    <option value="928">Wheel for Machines</option>
+                                                    <option value="693">Whetstone balance measuring machine</option>
+                                                    <option value="867">White Coal Machines</option>
+                                                    <option value="876">Wire Cutt Machines</option>
+                                                    <option value="26">Wire Machinery</option>
+                                                    <option value="1270">Wood Working machine</option>
+                                                    <option value="749">Workbench</option>
+                                                    <option value="869">Xerox Machines</option>
+                                                    <option value="1278">Zinc plating plant</option>
+
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label>Sub Category <span class="imp">*</span></label>
+                                                <select id="subcategory1"
+                                                    class="w-full border border-gray-300 p-2 rounded"
+                                                    style="background-color: #2d3748;" required="">
+                                                    <option>-- Select Sub Category --</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <a href="variety.html"><button type="button" class="btn btn-primary w-100"
+                                            id="searchMachine1">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="btn btn-info" data-bs-toggle="modal" data-bs-target="#loginModal">Sell Your Machine</a>
+                </div>
+            </div>
+        </div>
+        <nav class="bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg">
+            <ul class="flex justify-center space-x-8 py-3 text-white text-sm font-semibold tracking-wide">
+                <li style="background: #003366; border-radius: 20px; width: 10rem; text-align: center">
+                    <a href="index.html"
+                        class="hover:text-yellow-400 hover:underline hover:scale-105 transform transition-all duration-300 ease-in-out ">HOME</a>
+                </li>
+                <li style="background: #003366; border-radius: 20px; width: 10rem; text-align: center">
+                    <a href="index.html#about"
+                        class="hover:text-yellow-400 hover:underline hover:scale-105 transform transition-all duration-300 ease-in-out">About
+                        Us</a>
+                </li>
+                <li style="background: #003366; border-radius: 20px; width: 10rem; text-align: center">
+                    <a href="buyer.html"
+                        class="hover:text-yellow-400 hover:underline hover:scale-105 transform transition-all duration-300 ease-in-out">Products</a>
+                </li>
+                <li style="background: #003366; border-radius: 20px; width: 14rem; text-align: center">
+                    <a href="#footer"
+                        class="hover:text-yellow-400 hover:underline hover:scale-105 transform transition-all duration-300 ease-in-out">Contact
+                        Us</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="container mt-4" style="padding:0% 10% 0% 10%;" ng-repeat="obj in jsonArray">
+        <h1 class="product-title">
+            {{obj.category}}
+        </h1>
+        <div class="row">
+            <div class="col-md-8" style="margin-top:5%; margin-right: 10%; border-radius: 30px; width: 40rem;">
+                <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img alt="Image of a reciprocating or piston compressor" class="d-block"
+                                style="width: 40rem; height: 20rem" src="uploads/{{obj.image1}}" />
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="Another image of a reciprocating or piston compressor" class="d-block"
+                                style="width: 40rem; height: 20rem" src="uploads/{{obj.image2}}" />
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="Another image of a reciprocating or piston compressor" class="d-block"
+                                style="width: 40rem; height: 20rem" src="uploads/{{obj.main_image}}" />
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" data-bs-slide="prev"
+                        data-bs-target="#carouselExampleIndicators" type="button">
+                        <span aria-hidden="true" class="carousel-control-prev-icon "></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" data-bs-slide="next"
+                        data-bs-target="#carouselExampleIndicators" type="button">
+                        <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button class="btn view-seller-btn mb-2" data-bs-toggle="modal" data-bs-target="#sellerDetail">
+                    View Seller Detail
+                </button>
+
+                <!-- seller modal -->
+                <div class="modal fade" id="sellerDetail" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel">Request Seller Information Form</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+
+                            </div>
+                            <div class="form-text">
+                                <i class="fas fa-info-circle"></i> Please complete the form below to receive detailed
+                                information about the seller.
+                            </div>
+                            <hr>
+                            <div class="modal-body">
+                                <form method="post">
+                                    <!-- Contact Information Section -->
+                                    <div class="form-section">
+                                        <h5>Contact Information</h5>
+                                        <div class="mb-3">
+                                            <input class="form-control" id="buyerEmail" placeholder=" Email *" required=""
+                                                type="email" />
+                                            <div class="form-text">
+                                                <i class="fas fa-info-circle"></i> You will get updates on this
+                                                email ID
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <input class="form-control" id="buyerName" placeholder="Full Name *"
+                                                    required="" type="text" />
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <textarea class="form-control" id="buyerAddress" placeholder="Address *"
+                                                    required="" rows="1"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <input class="form-control" id="buyerCountry" placeholder="Country *"
+                                                    required="" type="text" />
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input class="form-control" id="buyerState" placeholder="State *"
+                                                    required="" type="text" />
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input class="form-control" id="buyerCity" placeholder="City *"
+                                                    required="" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-2 mb-3">
+                                                <input class="form-control" id="buyerISD" placeholder="+91" value="+91"
+                                                    required="" type="text" />
+                                                <div class="form-text">ISD</div>
+                                            </div>
+                                            <div class="col-md-10 mb-3">
+                                                <input class="form-control" id="buyerNumber" placeholder="Mobile Number"
+                                                    required="" type="text" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <span id="buyer-submit">*</span>
+                                <button class="list-group-item btn btn-primary w-100" type="button" id="buyerdetail">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price" style="float: right;">
+                    Price: {{obj.currency}} {{obj.price}}
+                </div>
+                <table class="details-table table table-bordered mt-2">
+                    <tr>
+                        <th>
+                            Product Name
+                        </th>
+                        <td>
+                            {{obj.product_name}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Product ID
+                        </th>
+                        <td>
+                            {{obj.productID}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Model No.
+                        </th>
+                        <td>
+                            {{obj.product_model}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Capacity of Machine
+                        </th>
+                        <td>
+                            {{obj.capacity}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Years Used
+                        </th>
+                        <td>
+                            {{obj.usage_years}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Country of Mfg
+                        </th>
+                        <td>
+                            {{obj.country_mfg}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Quantity
+                        </th>
+                        <td>
+                            {{obj.quantity}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Warranty
+                        </th>
+                        <td>
+                            {{obj.warranty}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Sub Category
+                        </th>
+                        <td>
+                            {{obj.sub_category}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Specification
+                        </th>
+                        <td>
+                            {{obj.specification}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container mx-auto py-10 px-4">
+            <div class="flex flex-col sm:flex-row justify-around items-center py-10 space-y-6 sm:space-y-0">
+                <div class="text-center">
+                    <img alt="logo" class="mx-auto mb-2" height="100" src="asset/logo 2.png" width="150" />
+                </div>
+                <div class="text-center">
+                    <p class="text-lg font-bold text-blue-500 mb-2">Follow Us</p>
+                    <div class="flex justify-center space-x-4">
+                        <a class="text-blue-500 text-2xl" href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a class="text-blue-500 text-2xl" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-blue-500 text-2xl" href="#">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="text-lg font-bold text-blue-500 mb-2">
+                        <i class="fas fa-phone-alt"></i> Call Us
+                    </p>
+                    <p class="text-lg font-bold">+91 99158-65830</p>
+                    <p class="text-lg font-bold">+91 62393-58085</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-lg font-bold text-blue-500 mb-2">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </p>
+                    <p class="text-lg font-bold">mechswap09@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-4">
+                <p class="text-center text-sm">© 2024 MechSwap. All Rights Reserved</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 mt-2">
+                    <a class="text-sm mb-2 sm:mb-0" href="index.html#about">About Us</a>
+                    <a class="text-sm mb-2 sm:mb-0" href="#" data-bs-toggle="modal" data-bs-target="#TermsAndConditions">Terms &amp; Condition</a>
+                    <a class="text-sm mb-2 sm:mb-0" href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <!-- Terms And Conditions -->
+        <div class="modal fade" id="TermsAndConditions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 80%;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Terms and Conditions</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+               
+                        <p><strong>Welcome to MechSwap!</strong></p>
+                        <p>These Terms govern your use of the MechSwap website. By using our Website, you agree to these Terms. If you disagree, please do not use our Website.</p>
+                        <br>
+                        <p><strong>1. Use of the Website</strong></p>
+                        <p><strong>1.1 Registration:</strong> To use certain features, you must create an account. You are responsible for maintaining the confidentiality of your account and for all activities under it.</p>
+                        <p><strong>1.2 Conduct:</strong> Do not engage in any unlawful or disruptive behavior. Ensure that all content you provide is accurate and not harmful.</p>
+                        
+                        <br>
+                        <p><strong>2. Marketplace Transactions</strong></p>
+                        <p><strong>2.1 Listings:</strong> Users can list machines for sale. Ensure your listings are accurate and complete.</p>
+                        <p><strong>2.2 Purchases:</strong> Follow the agreed terms with the seller when purchasing machines.</p>
+                        <p><strong>2.3 No Fees:</strong> MechSwap does not charge any fees for transactions or services.</p>
+                        <br>
+
+                        <p><strong>3. Intellectual Property</strong></p>
+                        <p><strong>3.1 Ownership:</strong> All content on the Website is owned by MechSwap or its licensors. You may not use it without permission.</p>
+                        <br>
+
+                        <p><strong>4. Privacy</strong></p>
+                        <p>Our Privacy Policy governs how we handle your information. Review it at Privacy Policy.</p>
+                        <br>
+
+                        <p><strong>5. Limitation of Liability</strong></p>
+                        <p>MechSwap is not liable for any indirect or consequential damages arising from your use of the Website.</p>
+                        <br>
+
+                        <p><strong>6. Dispute Resolution</strong></p>
+                        <p><strong>6.1 Governing Law:</strong> These Terms are governed by the laws of India.</p>
+                        <p><strong>6.2 Disputes:</strong>Any disputes will be resolved through binding arbitration in India.</p>
+                        <br>
+
+                        <p><strong>7. Changes</strong></p>
+                        <p>We may update these Terms. Check our Website for the latest version. Continued use means you accept the changes.</p>
+                        <br>
+
+                        <p><strong>8. Contact Us</strong></p>
+                        <p>For questions, contact us at:</p>
+                        <p>Email: mechswap09@gmail.com</p>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div class="modal fade" id="privacyPolicy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 80%;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Privacy Policy</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+        
+                        <p><strong>Welcome to MechSwap!</strong></p>
+                        <p>Our Privacy Policy explains how we handle your information and what we do with it. By using our Website, you agree to the terms outlined in this policy.</p>
+                        <br>
+        
+                        <p><strong>1. What Information We Collect and Why</strong></p>
+                        <p>We collect information related to machines that sellers wish to list, whether new or used. Our goal is to connect buyers with sellers to facilitate transactions at the best possible prices. We do not share, sell, or rent any of the information collected to third parties and have no intention of doing so in the future.</p>
+                        <br>
+        
+                        <p><strong>2. Information Collected</strong></p>
+                        <p>When users become members of MechSwap, we may collect:</p>
+                        <ul>
+                            <li>• Details about the machines they wish to sell</li>
+                            <li>• Contact information (mechswap09@gmail.com, +91 99158-65830) for communication purposes</li>
+                        </ul>
+                        <p>This information may be used to contact buyers or sellers in the future to provide updates on sales, purchases, or relevant solutions and services.</p>
+                        <br>
+        
+                        <p><strong>3. Information Collected by Others</strong></p>
+                        <p>This policy pertains only to the MechSwap website and does not cover external sites accessed through links on our site. We do not use cookies. Members wishing to cancel their machine listing or update their details after a sale can contact us via email or phone.</p>
+                        <br>
+        
+                        <p><strong>4. Periodic Policy Changes</strong></p>
+                        <p>MechSwap reviews its privacy practices periodically. To stay updated with the most current version of our privacy policy, please bookmark and regularly review this page.</p>
+                        <br>
+        
+                        <p><strong>5. Disclosure of Information</strong></p>
+                        <p>We may disclose information when legally required to do so or to protect our legal rights.</p>
+                        <br>
+            
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+
+    <script src="script/product.js"></script>
+    <script src="script/header.js"></script>
+    <script src="script/sub_category.js"></script>
+
+    <!-- bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-14J8gkW3M/yiBDO6M62Pqhhzj1M8FYS9qF0Xl52j/Pc5g5QR5NFnJ8OTbXstgwpT"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
